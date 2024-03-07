@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B7E25AC2B9A0667001CA577 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7E25AB2B9A0667001CA577 /* AppConfiguration.swift */; };
 		5BCE6BEB2B9984F700FFE73E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE6BEA2B9984F700FFE73E /* AppDelegate.swift */; };
 		5BCE6BED2B9984F700FFE73E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE6BEC2B9984F700FFE73E /* SceneDelegate.swift */; };
 		5BCE6BEF2B9984F700FFE73E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE6BEE2B9984F700FFE73E /* ViewController.swift */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B7E25A92B9A043E001CA577 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
+		5B7E25AA2B9A0463001CA577 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		5B7E25AB2B9A0667001CA577 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		5BCE6BE72B9984F700FFE73E /* NowSeoul_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NowSeoul_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCE6BEA2B9984F700FFE73E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BCE6BEC2B9984F700FFE73E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,9 @@
 				5BCE6BF32B9984F800FFE73E /* Assets.xcassets */,
 				5BCE6BF52B9984F800FFE73E /* LaunchScreen.storyboard */,
 				5BCE6BF82B9984F800FFE73E /* Info.plist */,
+				5B7E25A92B9A043E001CA577 /* debug.xcconfig */,
+				5B7E25AA2B9A0463001CA577 /* release.xcconfig */,
+				5B7E25AB2B9A0667001CA577 /* AppConfiguration.swift */,
 			);
 			path = NowSeoul_iOS;
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 			files = (
 				5BCE6BEF2B9984F700FFE73E /* ViewController.swift in Sources */,
 				5BCE6BEB2B9984F700FFE73E /* AppDelegate.swift in Sources */,
+				5B7E25AC2B9A0667001CA577 /* AppConfiguration.swift in Sources */,
 				5BCE6BED2B9984F700FFE73E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +203,7 @@
 /* Begin XCBuildConfiguration section */
 		5BCE6BF92B9984F800FFE73E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7E25A92B9A043E001CA577 /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -245,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -258,6 +267,7 @@
 		};
 		5BCE6BFA2B9984F800FFE73E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7E25AA2B9A0463001CA577 /* release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -302,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -314,6 +324,7 @@
 		};
 		5BCE6BFC2B9984F800FFE73E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7E25A92B9A043E001CA577 /* debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -343,6 +354,7 @@
 		};
 		5BCE6BFD2B9984F800FFE73E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7E25AA2B9A0463001CA577 /* release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

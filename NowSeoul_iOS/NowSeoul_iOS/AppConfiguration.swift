@@ -8,9 +8,8 @@
 import Foundation
 
 final class AppConfiguration {
-  
   static let shared = AppConfiguration()
-  private init(){}
+  private init() {}
   
   // 서울 공공 데이터 API 키
   lazy var seoulPublicDataAPIKey: String = loadValueForKey("SEOUL_PUBLIC_DATA_API_KEY")

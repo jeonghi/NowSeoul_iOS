@@ -6,13 +6,15 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>$(SEOUL_PUBLIC_DATA_API_DOMAIN)</key>
+			<key>openapi.seoul.go.kr</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
 		</dict>
 	</dict>
+	<key>SEOUL_PUBLIC_DATA_API_BASE_URL</key>
+	<string>$(SEOUL_PUBLIC_DATA_API_BASE_URL)</string>
 	<key>SEOUL_PUBLIC_DATA_API_KEY</key>
 	<string>$(SEOUL_PUBLIC_DATA_API_KEY)</string>
 	<key>UIApplicationSceneManifest</key>

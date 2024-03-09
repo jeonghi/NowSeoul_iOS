@@ -342,6 +342,7 @@
 				5B6886F42B9C5B5500B75DE5 /* BaseViewController.swift in Sources */,
 				5B7623402B9C36A900D503DD /* SeoulAreaEntity.swift in Sources */,
 				5B6887052B9C5EA700B75DE5 /* MapView.swift in Sources */,
+				5B7623402B9C36A900D503DD /* SeoulAreaEntity.swift in Sources */,
 				5B7E25B22B9A122B001CA577 /* SeoulPopulationEntity.swift in Sources */,
 				5B6886F92B9C5BE600B75DE5 /* BaseComponentConfigurable.swift in Sources */,
 				5B6886F72B9C5BCA00B75DE5 /* BaseViewConfigurable.swift in Sources */,

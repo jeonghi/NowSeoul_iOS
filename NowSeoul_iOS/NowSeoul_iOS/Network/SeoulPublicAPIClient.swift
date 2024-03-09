@@ -21,7 +21,7 @@ final class SeoulPublicAPIClient {
   }
   
   private var baseUrl: String { AppConfiguration.shared.seoulPublicDataAPIBaseURL }
-  
+
   private init() {}
 }
 

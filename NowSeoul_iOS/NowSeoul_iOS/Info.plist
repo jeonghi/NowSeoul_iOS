@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SEOUL_PUBLIC_DATA_API_BASE_URL</key>
+	<string>$(SEOUL_PUBLIC_DATA_API_BASE_URL)</string>
+	<key>SEOUL_PUBLIC_DATA_API_KEY</key>
+	<string>$(SEOUL_PUBLIC_DATA_API_KEY)</string>
+	<key>BASE_CONFIGURATION_FILE_URL</key>
+	<string>$(BASE_CONFIGURATION_FILE_URL)</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -13,10 +19,6 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>SEOUL_PUBLIC_DATA_API_BASE_URL</key>
-	<string>$(SEOUL_PUBLIC_DATA_API_BASE_URL)</string>
-	<key>SEOUL_PUBLIC_DATA_API_KEY</key>
-	<string>$(SEOUL_PUBLIC_DATA_API_KEY)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

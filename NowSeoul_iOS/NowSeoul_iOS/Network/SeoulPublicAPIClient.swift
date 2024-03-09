@@ -8,19 +8,57 @@
 import Foundation
 
 protocol SeoulPublicAPIClientType {
+  func fetchAllBaseSeoulAreaData(completion: @escaping (Result<[SeoulAreaEntity]?, Error>) -> Void)
   func fetchRealTimePopulationData(forArea areaId: Int, completion: @escaping (Result<SeoulPopulationEntity.Data?, Error>) -> Void)
   func fetchAllAreaRealTimePoulationData(forAreas areaIds: [Int], completion: @escaping (Result<[SeoulPopulationEntity.Data]?, Error>) -> Void)
 }
 
 final class SeoulPublicAPIClient {
   static let shared = SeoulPublicAPIClient()
+
+  private var baseConfigurationFileUrl: String {
+    AppConfiguration.shared.baseConfigurationFileURL
+  }
   
-  private let baseUrl = AppConfiguration.shared.seoulPublicDataAPIBaseURL
+  private var baseUrl: String { AppConfiguration.shared.seoulPublicDataAPIBaseURL
+  }
   
   private init() {}
 }
 
 extension SeoulPublicAPIClient: SeoulPublicAPIClientType {
+  func fetchAllBaseSeoulAreaData(completion: @escaping (Result<[SeoulAreaEntity]?, any Error>) -> Void) {
+    guard let url = baseConfigurationFileUrl.toURL() else {
+      completion(.failure(NSError(domain: "No Url", code: 0)))
+      return
+    }
+    
+    
+    let task = URLSession.shared.dataTask(with: url) { data, _, error in
+      if let error {
+        completion(.failure(error))
+        return
+      }
+      
+      guard let data else {
+        completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
+        return
+      }
+      
+      do {
+        let features = try JSONDecoder().decode(SeoulAreaDTO.Response.self, from: data).features
+        
+        let entities = features.map { SeoulAreaDTOMapper.toEntity($0) }
+        
+        completion(.success(entities))
+      } catch {
+        completion(.failure(error))
+      }
+    }
+    
+    task.resume()
+  }
+
   func fetchRealTimePopulationData(forArea areaId: Int, completion: @escaping (Result<SeoulPopulationEntity.Data?, Error>) -> Void) {
     let key = AppConfiguration.shared.seoulPublicDataAPIKey
     

@@ -16,6 +16,9 @@ final class AppConfiguration {
   
   // 서울 공공 데이터 API 기본 URL
   lazy var seoulPublicDataAPIBaseURL: String = loadValueForKey("SEOUL_PUBLIC_DATA_API_BASE_URL")
+  
+  // 기본 설정 파일 URL
+  lazy var baseConfigurationFileURL: String = loadValueForKey("BASE_CONFIGURATION_FILE_URL")
 }
 
 extension AppConfiguration {

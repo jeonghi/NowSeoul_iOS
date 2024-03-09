@@ -20,43 +20,46 @@ final class SeoulPublicAPIClient {
     AppConfiguration.shared.baseConfigurationFileURL
   }
   
-  private var baseUrl: String { AppConfiguration.shared.seoulPublicDataAPIBaseURL
-  }
+  private var baseUrl: String { AppConfiguration.shared.seoulPublicDataAPIBaseURL }
   
   private init() {}
 }
 
 extension SeoulPublicAPIClient: SeoulPublicAPIClientType {
   func fetchAllBaseSeoulAreaData(completion: @escaping (Result<[SeoulAreaEntity]?, any Error>) -> Void) {
-    guard let url = baseConfigurationFileUrl.toURL() else {
-      completion(.failure(NSError(domain: "No Url", code: 0)))
-      return
-    }
-    
-    
-    let task = URLSession.shared.dataTask(with: url) { data, _, error in
-      if let error {
-        completion(.failure(error))
+    DispatchQueue.global().async {
+      guard let url = self.baseConfigurationFileUrl.toURL() else {
+        completion(.failure(NSError(domain: "No Url", code: 0)))
         return
       }
       
-      guard let data else {
-        completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
-        return
+      
+      let task = URLSession.shared.dataTask(with: url) { data, _, error in
+        DispatchQueue.main.async {
+          if let error {
+            completion(.failure(error))
+            return
+          }
+          
+          guard let data else {
+            completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
+            return
+          }
+          
+          do {
+            let features = try JSONDecoder().decode(SeoulAreaDTO.Response.self, from: data).features
+            
+            let entities = features.map { SeoulAreaDTOMapper.toEntity($0) }
+            
+            completion(.success(entities))
+          } catch {
+            completion(.failure(error))
+          }
+        }
       }
       
-      do {
-        let features = try JSONDecoder().decode(SeoulAreaDTO.Response.self, from: data).features
-        
-        let entities = features.map { SeoulAreaDTOMapper.toEntity($0) }
-        
-        completion(.success(entities))
-      } catch {
-        completion(.failure(error))
-      }
+      task.resume()
     }
-    
-    task.resume()
   }
 
   func fetchRealTimePopulationData(forArea areaId: Int, completion: @escaping (Result<SeoulPopulationEntity.Data?, Error>) -> Void) {

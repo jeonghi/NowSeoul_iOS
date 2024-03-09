@@ -13,6 +13,14 @@
 		5B6886E52B9C3D8500B75DE5 /* DTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886E42B9C3D8500B75DE5 /* DTOMapper.swift */; };
 		5B6886E82B9C43A000B75DE5 /* SeoulAreaDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886E72B9C43A000B75DE5 /* SeoulAreaDTO.swift */; };
 		5B6886EB2B9C43CF00B75DE5 /* SeoulAreaDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886EA2B9C43CF00B75DE5 /* SeoulAreaDTOMapper.swift */; };
+		5B6886F12B9C5B2900B75DE5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6886F02B9C5B2900B75DE5 /* SnapKit */; };
+		5B6886F42B9C5B5500B75DE5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886F32B9C5B5500B75DE5 /* BaseViewController.swift */; };
+		5B6886F72B9C5BCA00B75DE5 /* BaseViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886F62B9C5BCA00B75DE5 /* BaseViewConfigurable.swift */; };
+		5B6886F92B9C5BE600B75DE5 /* BaseComponentConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886F82B9C5BE600B75DE5 /* BaseComponentConfigurable.swift */; };
+		5B6886FC2B9C5C5700B75DE5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6886FB2B9C5C5700B75DE5 /* Then */; };
+		5B6886FE2B9C5CEA00B75DE5 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886FD2B9C5CEA00B75DE5 /* BaseView.swift */; };
+		5B6887012B9C5E6C00B75DE5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6887002B9C5E6C00B75DE5 /* MapViewController.swift */; };
+		5B6887052B9C5EA700B75DE5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6887042B9C5EA700B75DE5 /* MapView.swift */; };
 		5B7623402B9C36A900D503DD /* SeoulAreaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76233F2B9C36A900D503DD /* SeoulAreaEntity.swift */; };
 		5B7E25AC2B9A0667001CA577 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7E25AB2B9A0667001CA577 /* AppConfiguration.swift */; };
 		5B7E25AF2B9A0BAD001CA577 /* SeoulPublicAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7E25AE2B9A0BAD001CA577 /* SeoulPublicAPIClient.swift */; };
@@ -32,6 +40,12 @@
 		5B6886E42B9C3D8500B75DE5 /* DTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOMapper.swift; sourceTree = "<group>"; };
 		5B6886E72B9C43A000B75DE5 /* SeoulAreaDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulAreaDTO.swift; sourceTree = "<group>"; };
 		5B6886EA2B9C43CF00B75DE5 /* SeoulAreaDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulAreaDTOMapper.swift; sourceTree = "<group>"; };
+		5B6886F32B9C5B5500B75DE5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5B6886F62B9C5BCA00B75DE5 /* BaseViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfigurable.swift; sourceTree = "<group>"; };
+		5B6886F82B9C5BE600B75DE5 /* BaseComponentConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseComponentConfigurable.swift; sourceTree = "<group>"; };
+		5B6886FD2B9C5CEA00B75DE5 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		5B6887002B9C5E6C00B75DE5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5B6887042B9C5EA700B75DE5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		5B76233F2B9C36A900D503DD /* SeoulAreaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulAreaEntity.swift; sourceTree = "<group>"; };
 		5B7E25A92B9A043E001CA577 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		5B7E25AA2B9A0463001CA577 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
@@ -55,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6886F12B9C5B2900B75DE5 /* SnapKit in Frameworks */,
+				5B6886FC2B9C5C5700B75DE5 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +118,58 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
+		5B6886F22B9C5B4D00B75DE5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5B6887062B9C5EDB00B75DE5 /* Extensions */,
+				5B6886F52B9C5B5C00B75DE5 /* Protocols */,
+				5B6886F32B9C5B5500B75DE5 /* BaseViewController.swift */,
+				5B6886FD2B9C5CEA00B75DE5 /* BaseView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5B6886F52B9C5B5C00B75DE5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5B6886F62B9C5BCA00B75DE5 /* BaseViewConfigurable.swift */,
+				5B6886F82B9C5BE600B75DE5 /* BaseComponentConfigurable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5B6886FF2B9C5E5B00B75DE5 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5B6887022B9C5E7000B75DE5 /* MapScene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5B6887022B9C5E7000B75DE5 /* MapScene */ = {
+			isa = PBXGroup;
+			children = (
+				5B6887032B9C5E7700B75DE5 /* Map */,
+			);
+			path = MapScene;
+			sourceTree = "<group>";
+		};
+		5B6887032B9C5E7700B75DE5 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				5B6887002B9C5E6C00B75DE5 /* MapViewController.swift */,
+				5B6887042B9C5EA700B75DE5 /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		5B6887062B9C5EDB00B75DE5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5B7E25B02B9A1219001CA577 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +208,8 @@
 		5BCE6BE92B9984F700FFE73E /* NowSeoul_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				5B6886FF2B9C5E5B00B75DE5 /* Presentation */,
+				5B6886F22B9C5B4D00B75DE5 /* Base */,
 				5B5F0B6B2B9AEBD900554E2E /* Network */,
 				5B5F0B682B9AE11600554E2E /* Manager */,
 				5B7E25B32B9A14DC001CA577 /* Extensions */,
@@ -176,6 +246,10 @@
 			dependencies = (
 			);
 			name = NowSeoul_iOS;
+			packageProductDependencies = (
+				5B6886F02B9C5B2900B75DE5 /* SnapKit */,
+				5B6886FB2B9C5C5700B75DE5 /* Then */,
+			);
 			productName = NowSeoul_iOS;
 			productReference = 5BCE6BE72B9984F700FFE73E /* NowSeoul_iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -204,6 +278,10 @@
 				Base,
 			);
 			mainGroup = 5BCE6BDE2B9984F700FFE73E;
+			packageReferences = (
+				5B6886EF2B9C5B2900B75DE5 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				5B6886FA2B9C5C5700B75DE5 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 5BCE6BE82B9984F700FFE73E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,13 +339,20 @@
 				5B7E25B52B9A14E5001CA577 /* String+Extension.swift in Sources */,
 				5BCE6BEF2B9984F700FFE73E /* ViewController.swift in Sources */,
 				5B6886E82B9C43A000B75DE5 /* SeoulAreaDTO.swift in Sources */,
+				5B6886F42B9C5B5500B75DE5 /* BaseViewController.swift in Sources */,
+				5B7623402B9C36A900D503DD /* SeoulAreaEntity.swift in Sources */,
+				5B6887052B9C5EA700B75DE5 /* MapView.swift in Sources */,
 				5B7623402B9C36A900D503DD /* SeoulAreaEntity.swift in Sources */,
 				5B7E25B22B9A122B001CA577 /* SeoulPopulationEntity.swift in Sources */,
+				5B6886F92B9C5BE600B75DE5 /* BaseComponentConfigurable.swift in Sources */,
+				5B6886F72B9C5BCA00B75DE5 /* BaseViewConfigurable.swift in Sources */,
 				5B5F0B6A2B9AE12700554E2E /* DateFormatManager.swift in Sources */,
 				5BCE6BEB2B9984F700FFE73E /* AppDelegate.swift in Sources */,
 				5B7E25AC2B9A0667001CA577 /* AppConfiguration.swift in Sources */,
 				5BCE6BED2B9984F700FFE73E /* SceneDelegate.swift in Sources */,
 				5B6886E52B9C3D8500B75DE5 /* DTOMapper.swift in Sources */,
+				5B6886FE2B9C5CEA00B75DE5 /* BaseView.swift in Sources */,
+				5B6887012B9C5E6C00B75DE5 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +581,38 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B6886EF2B9C5B2900B75DE5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.7.1;
+			};
+		};
+		5B6886FA2B9C5C5700B75DE5 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = exactVersion;
+				version = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5B6886F02B9C5B2900B75DE5 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B6886EF2B9C5B2900B75DE5 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		5B6886FB2B9C5C5700B75DE5 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B6886FA2B9C5C5700B75DE5 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5BCE6BDF2B9984F700FFE73E /* Project object */;
 }

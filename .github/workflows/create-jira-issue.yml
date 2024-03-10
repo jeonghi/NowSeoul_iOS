@@ -1,0 +1,77 @@
+name: Create Jira issue
+on:
+  issues:
+    types:
+      - opened # 이 워크플로우는 GitHub 이슈가 열릴 때(triggered) 실행됩니다.
+
+jobs:
+  create-issue:
+    name: Create Jira issue
+    runs-on: ubuntu-latest # 이 작업은 최신 Ubuntu 러너에서 실행됩니다.
+    steps:
+      - name: Login
+        uses: atlassian/gajira-login@v3
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+
+      - name: Checkout main code
+        uses: actions/checkout@v4
+        with:
+          ref: main # 메인(main) 브랜치의 코드를 체크아웃합니다.
+
+      - name: Issue Parser
+        uses: stefanbuck/github-issue-praser@v3
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/issue_form.yml # GitHub 이슈 템플릿 경로
+
+      - name: Log Issue Parser
+        run: |
+          echo '${{ steps.issue-parser.outputs.jsonString }}'
+
+      - name: Convert markdown to Jira Syntax
+        uses: peter-evans/jira2md@v1
+        id: md2jira
+        with:
+          input-text: |
+            ### Github Issue Link
+            - ${{ github.event.issue.html_url }}
+            ${{ github.event.issue.body }} # GitHub 이슈 본문을 Jira 마크다운으로 변환합니다.
+          mode: md2jira
+
+      - name: Create Issue
+        id: create
+        uses: atlassian/gajira-create@v3
+        with:
+          project: NOWSEOUL
+          issuetype: SubTask
+          summary: "${{ github.event.issue.title }}"
+          description: "${{ steps.md2jira.outputs.output-text }}"
+          fields: |
+            {
+              "parent": {
+                "key": "${{ steps.issue-parser.outputs.issueparser_parentKey }}"
+              }
+            }
+
+      - name: Log created issue
+        run: echo "Jira Issue ${{ steps.issue-parser.outputs.parentKey }}/${{ steps.create.outputs.issue }} was created" 
+
+      - name: Checkout develop code
+        uses: actions/checkout@v4
+        with:
+          ref: develop # 개발(develop) 브랜치의 코드를 체크아웃합니다.
+
+      - name: Create branch with Ticket number
+        run: |
+          git checkout -b ${{ steps.create.outputs.issue }} # Jira 이슈 번호로 브랜치 생성
+          git push origin ${{ steps.create.outputs.issue }} # 생성된 브랜치를 원격 저장소에 푸시
+
+      - name: Update issue title
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: "update-issue"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "${{ steps.create.outputs.issue }} ${{ github.event.issue.title }}" # GitHub 이슈 제목 업데이트

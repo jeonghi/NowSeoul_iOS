@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+@objc protocol BaseViewModelConfigurable: AnyObject {
+  func bindViewModel()
+  func bindView()
+}

@@ -8,9 +8,8 @@
 import Foundation
 
 protocol SeoulPublicAPIClientType {
-  func fetchAllBaseSeoulAreaData(completion: @escaping (Result<[SeoulAreaEntity]?, Error>) -> Void)
-  func fetchRealTimePopulationData(forArea areaId: Int, completion: @escaping (Result<SeoulPopulationEntity.Data?, Error>) -> Void)
-  func fetchAllAreaRealTimePoulationData(forAreas areaIds: [Int], completion: @escaping (Result<[SeoulPopulationEntity.Data]?, Error>) -> Void)
+  func fetchRealTimePopulationData(forArea areaId: Int, completion: @escaping (Result<SeoulPopulationDTO.Data?, Error>) -> Void)
+  func fetchAllAreaRealTimePoulationData(forAreas areaIds: [Int], completion: @escaping (Result<[SeoulPopulationDTO.Data]?, Error>) -> Void)
 }
 
 final class SeoulPublicAPIClient {
@@ -26,50 +25,13 @@ final class SeoulPublicAPIClient {
 }
 
 extension SeoulPublicAPIClient: SeoulPublicAPIClientType {
-  func fetchAllBaseSeoulAreaData(completion: @escaping (Result<[SeoulAreaEntity]?, any Error>) -> Void) {
-    DispatchQueue.global().async {
-      guard let url = self.baseConfigurationFileUrl.toURL() else {
-        completion(.failure(NSError(domain: "No Url", code: 0)))
-        return
-      }
-      
-      
-      let task = URLSession.shared.dataTask(with: url) { data, _, error in
-        DispatchQueue.main.async {
-          if let error {
-            completion(.failure(error))
-            return
-          }
-          
-          guard let data else {
-            completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
-            return
-          }
-          
-          do {
-            let features = try JSONDecoder().decode(SeoulAreaDTO.Response.self, from: data).features
-            
-            let entities = features.map { SeoulAreaDTOMapper.toEntity($0) }
-            
-            completion(.success(entities))
-          } catch {
-            completion(.failure(error))
-          }
-        }
-      }
-      
-      task.resume()
-    }
-  }
-
-  func fetchRealTimePopulationData(forArea areaId: Int, completion: @escaping (Result<SeoulPopulationEntity.Data?, Error>) -> Void) {
+  func fetchRealTimePopulationData(forArea areaCode: String, completion: @escaping (Result<SeoulPopulationDTO.Data?, Error>) -> Void) {
     let key = AppConfiguration.shared.seoulPublicDataAPIKey
     
     let type = "json"
     let service = "citydata_ppltn"
     let startIndex = "1"
     let endIndex = "10"
-    let areaCode = String(format: "POI%03d", areaId)
     
     let urlString = "\(baseUrl)/\(key)/\(type)/\(service)/\(startIndex)/\(endIndex)/\(areaCode)"
       .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -91,7 +53,8 @@ extension SeoulPublicAPIClient: SeoulPublicAPIClientType {
       }
       
       do {
-        let decodedResponse = try JSONDecoder().decode(SeoulPopulationEntity.Response.self, from: data)
+        let decodedResponse = try JSONDecoder().decode(SeoulPopulationDTO.Response.self, from: data)
+        
         guard let data = decodedResponse.citydataPpltn?.first else {
           completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
           return
@@ -101,13 +64,17 @@ extension SeoulPublicAPIClient: SeoulPublicAPIClientType {
         completion(.failure(error))
       }
     }
-    
     task.resume()
   }
   
-  func fetchAllAreaRealTimePoulationData(forAreas areaIds: [Int], completion: @escaping (Result<[SeoulPopulationEntity.Data]?, any Error>) -> Void) {
+  func fetchRealTimePopulationData(forArea areaId: Int, completion: @escaping (Result<SeoulPopulationDTO.Data?, Error>) -> Void) {
+    let areaCode = String(format: "POI%03d", areaId)
+    fetchRealTimePopulationData(forArea: areaCode, completion: completion)
+  }
+  
+  func fetchAllAreaRealTimePoulationData(forAreas areaIds: [Int], completion: @escaping (Result<[SeoulPopulationDTO.Data]?, Error>) -> Void) {
     DispatchQueue.global().async {
-      var list: [SeoulPopulationEntity.Data] = []
+      var list: [SeoulPopulationDTO.Data] = []
       
       let group = DispatchGroup()
       areaIds.forEach {

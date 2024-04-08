@@ -41,8 +41,12 @@ final class CarouselFlowLayout: UICollectionViewFlowLayout {
 
     let horizontalInset = (collectionSize.width - self.itemSize.width) / 2
     
-    self.sectionInset = UIEdgeInsets.init(top: 0, left: horizontalInset,
-                                          bottom: 0, right: horizontalInset)
+    self.sectionInset = UIEdgeInsets.init(
+      top: 0,
+      left: horizontalInset,
+      bottom: 0,
+      right: horizontalInset
+    )
 
     let scaledItemOffset = (self.itemSize.width - self.itemSize.width * self.sideItemScale) / 2
     self.minimumLineSpacing = self.spacing - scaledItemOffset
@@ -81,12 +85,17 @@ final class CarouselFlowLayout: UICollectionViewFlowLayout {
   }
 
   // 스크롤이 끝나려는 시점에 호출, 스크롤이 멈출 위치를 제어
-  override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint,
-                                    withScrollingVelocity velocity: CGPoint) -> CGPoint {
+  override func targetContentOffset(
+    forProposedContentOffset proposedContentOffset: CGPoint,
+    withScrollingVelocity velocity: CGPoint
+  ) -> CGPoint {
     guard let collectionView = collectionView,
-          collectionView.isPagingEnabled == false,
-          let layoutAttributes = self.layoutAttributesForElements(in: collectionView.bounds) else {
-      return super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
+          !(collectionView.isPagingEnabled),
+          let layoutAttributes = self.layoutAttributesForElements(in: collectionView.bounds)
+    else {
+      return super.targetContentOffset(
+        forProposedContentOffset: proposedContentOffset
+      )
     }
 
     let midSide = collectionView.bounds.size.width / 2

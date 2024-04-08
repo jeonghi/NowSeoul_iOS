@@ -71,7 +71,10 @@ extension MapViewController: MapViewDelegate {
     // 서울 중심에서 최대 허용 거리 (20km)
     let maxDistance = 20.0.km
     
-    let currentLocation = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+    let currentLocation = CLLocation(
+      latitude: mapView.centerCoordinate.latitude,
+      longitude: mapView.centerCoordinate.longitude
+    )
     
     let seoulLocation = CLLocation(latitude: seoulCenter.latitude, longitude: seoulCenter.longitude)
     
@@ -118,7 +121,10 @@ extension MapViewController: MapViewDelegate {
     
     if let stylableFeature = annotation as? StylableFeature {
       if stylableFeature is HotspotArea {
-        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: MKMarkerAnnotationView.identifier)
+        let annotationView = MKMarkerAnnotationView(
+          annotation: annotation,
+          reuseIdentifier: MKMarkerAnnotationView.identifier
+        )
         annotationView.annotation = annotation
         stylableFeature.configure(annotationView: annotationView)
         return annotationView
@@ -196,12 +202,19 @@ extension MapViewController: MapViewDelegate {
     // 현재 중앙에 있는 셀의 인덱스와 선택된 어노테이션의 인덱스가 다른 경우에만 스크롤
     // 애니메이션 적용시 부자연스러워 미적용
     if visibleIndexPath.row != index {
-      mainView.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: false)
+      mainView.collectionView.scrollToItem(
+        at: IndexPath(item: index, section: 0),
+        at: .centeredHorizontally,
+        animated: false
+      )
     }
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotspotCarouselCell.identifier, for: indexPath) as? HotspotCarouselCell else {
+    guard let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: HotspotCarouselCell.identifier,
+      for: indexPath
+    ) as? HotspotCarouselCell else {
       return .init()
     }
     let hotspot = seoulAreas[indexPath.row]
@@ -230,7 +243,10 @@ extension MapViewController: MapViewDelegate {
     // mainView.vStackView 좌표 시스템의 포인트를 구체적인 뷰의 좌표 시스템으로 변환한다.
     // 기준좌표계 뷰.(바꿀녀석, to: 바꿀좌표계 뷰)
     // 바꿀녀석은
-    let center = mainView.vStackView.convert(mainView.collectionView.center, to: mainView.collectionView)
+    let center = mainView.vStackView.convert(
+      mainView.collectionView.center,
+      to: mainView.collectionView
+    )
     // 그래서 UIView의 vStackView좌표계에 속한. center 좌표를, 그 자체적인 좌표로 변환시킨다.
     if let centerIndexPath = mainView.collectionView.indexPathForItem(at: center) {
       centerCardChanged(centerIndexPath)

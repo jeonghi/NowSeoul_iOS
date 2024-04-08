@@ -89,8 +89,7 @@ class HotspotCarouselCell: BaseCollectionViewCell {
       options: [
         .transition(.fade(1)), // 이미지가 로드되면 페이드 효과와 함께 나타납니다.
         .cacheOriginalImage
-      ]) { [weak self] result in
-        guard let self else { return }
+      ]) { result in
         switch result {
         case .success:
           break

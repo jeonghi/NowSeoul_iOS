@@ -750,6 +750,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		5B0988BA2BB10891000855A8 /* Firebase Analysitic */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);

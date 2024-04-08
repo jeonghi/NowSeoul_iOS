@@ -16,7 +16,10 @@ final class MapView: BaseView {
     $0.addGestureRecognizer(tapGestureRecognizer)
   }
   
-  lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewFlowLayout()).then {
+  lazy var collectionView = UICollectionView(
+    frame: .zero,
+    collectionViewLayout: createCollectionViewFlowLayout()
+  ).then {
     $0.isScrollEnabled = true
     $0.showsHorizontalScrollIndicator = false
   }
@@ -32,12 +35,9 @@ final class MapView: BaseView {
     $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
     $0.addTarget(self, action: #selector(tappedToastButton), for: .touchUpInside)
   }
-
   
-  lazy var vStackView: UIStackView = .init(arrangedSubviews: [
-    toastContainer,
-    collectionView
-  ]).then {
+  
+  lazy var vStackView: UIStackView = .init(arrangedSubviews: [toastContainer, collectionView]).then {
     $0.spacing = 20
     $0.axis = .vertical
     $0.alignment = .center
@@ -104,17 +104,17 @@ final class MapView: BaseView {
 extension MapView {
   // MARK: Public
   func showToast() {
-    UIView.animate(withDuration: 0.3, animations: { [weak self] in
+    UIView.animate(withDuration: 0.3) { [weak self] in
       self?.toastContainer.alpha = 1.0
-    }) { [weak self] _ in
+    } completion: { [weak self] _ in
       self?.toastContainer.isHidden = false
     }
   }
   
   func hideToast() {
-    UIView.animate(withDuration: 0.3, animations: { [weak self] in
+    UIView.animate(withDuration: 0.3) { [weak self] in
       self?.toastContainer.alpha = 0.0
-    }) { [weak self] _ in
+    } completion: { [weak self] _ in
       self?.toastContainer.isHidden = true
     }
   }
@@ -135,17 +135,16 @@ extension MapView {
   
   // collectionView의 표시 상태를 토글.
   private func toggleCollectionViewVisibility() {
-    UIView.animate(withDuration: 0.3, animations: { [weak self] in
+    UIView.animate(withDuration: 0.3) { [weak self] in
       self?.collectionView.alpha = self?.collectionView.alpha == 0.0 ? 1.0 : 0.0
       self?.collectionView.isHidden.toggle()
-    }) { [weak self] _ in
+    } completion: { [weak self] _ in
       self?.vStackView.layoutIfNeeded()
     }
   }
   
   private func moveToSeoulCenter() {
     var seoulCenter: CLLocationCoordinate2D { .init(latitude: 37.5665, longitude: 126.9780) }
-    
     mapView.setCenter(seoulCenter, animated: true)
   }
 }
@@ -161,23 +160,40 @@ extension MapView {
   
   private func createCollectionViewCompositionalLayout() -> UICollectionViewLayout {
     let layout = UICollectionViewCompositionalLayout { _, _ -> NSCollectionLayoutSection? in
-      let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+      let itemSize = NSCollectionLayoutSize(
+        widthDimension: .fractionalWidth(1.0),
+        heightDimension: .fractionalHeight(1.0)
+      )
       let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-      let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalHeight(1.0))
-      let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+      
+      let groupSize = NSCollectionLayoutSize(
+        widthDimension: .fractionalWidth(0.9),
+        heightDimension: .fractionalHeight(1.0)
+      )
+      let group = NSCollectionLayoutGroup.horizontal(
+        layoutSize: groupSize,
+        subitem: item,
+        count: 1
+      )
       group.interItemSpacing = .fixed(10)
-
+      
       let section = NSCollectionLayoutSection(group: group)
-
+      
       section.orthogonalScrollingBehavior = .groupPagingCentered
       section.interGroupSpacing = 10
       section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
-
+      
       section.visibleItemsInvalidationHandler = { visibleItems, offset, env in
         visibleItems.forEach { item in
           // 1
-          let intersectedRect = item.frame.intersection(CGRect(x: offset.x, y: offset.y, width: env.container.contentSize.width, height: item.frame.height))
+          let intersectedRect = item.frame.intersection(
+            CGRect(
+              x: offset.x,
+              y: offset.y,
+              width: env.container.contentSize.width,
+              height: item.frame.height
+            )
+          )
           // 2
           let percentVisible = intersectedRect.width / item.frame.width
           // 3
@@ -185,19 +201,23 @@ extension MapView {
           // 4
           item.transform = CGAffineTransform(scaleX: 0.98, y: scale)
         }
-
-        guard let currentIndex = visibleItems.last?.indexPath.row,
-              visibleItems.last?.indexPath.section == 0 else { return }
+        
+        guard visibleItems.last?.indexPath != nil,
+              visibleItems.last?.indexPath.section == 0 else {
+          return
+        }
       }
-
+      
       return section
     }
-
+    
     layout.configuration.scrollDirection = .horizontal
-
+    
     return layout
   }
 }
 
-@objc protocol MapViewDelegate: MKMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
-}
+@objc protocol MapViewDelegate: MKMapViewDelegate,
+                                UICollectionViewDelegate,
+                                UICollectionViewDataSource,
+                                UIScrollViewDelegate {}

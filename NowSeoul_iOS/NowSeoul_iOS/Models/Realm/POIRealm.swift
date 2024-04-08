@@ -8,7 +8,9 @@
 import RealmSwift
 
 class POIRealm: Object {
-  @Persisted(primaryKey: true) var id: Int // Unique identifier
+  @Persisted(primaryKey: true)
+  var id: Int
+ 
   @Persisted var category: String
   @Persisted var areaCode: String
   @Persisted var areaName: String

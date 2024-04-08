@@ -10,9 +10,6 @@ import SnapKit
 import Then
 
 class BaseViewController: UIViewController {
-  var coordinator: Coordinator?
-  
-  /// 기본 activityIndicator. lazy 프로퍼티로, 사용시에만 초기화
   lazy var activityIndicator: UIActivityIndicatorView = .init(style: .medium).then {
     self.view.addSubview($0)
     $0.snp.makeConstraints {

@@ -9,13 +9,13 @@ import Foundation
 
 // MARK: Palette
 private extension ColorAsset {
-  static let skycoral = ColorAsset(named: "skycoral", bundle: .main)
+  static let skycoral = ColorAsset(hex: "#F8496C")
   static let black = ColorAsset(hex: "#FFFFFF")
-  static let brightBlue = ColorAsset(named: "brightBlue", bundle: .main)
-  static let darkRed = ColorAsset(named: "darkRed", bundle: .main)
-  static let purple = ColorAsset(named: "purple", bundle: .main)
-  static let darkBlue = ColorAsset(named: "darkBlue", bundle: .main)
-  static let green = ColorAsset(named: "green", bundle: .main)
+  static let brightBlue = ColorAsset(hex: "#00BFFF")
+  static let darkRed = ColorAsset(hex: "#8B0000")
+  static let purple = ColorAsset(hex: "#800080")
+  static let darkBlue = ColorAsset(hex: "#00008B")
+  static let green = ColorAsset(hex: "#008000")
 }
 
 // MARK: Sementic

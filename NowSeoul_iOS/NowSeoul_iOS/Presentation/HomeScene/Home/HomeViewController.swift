@@ -51,8 +51,13 @@ extension HomeViewController: HomeViewDelegate {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let filteredSeoulAreas = seoulAreas.filter({ $0.properties.category == HotspotCategory.allCases[indexPath.section] })
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PosterStyleCell.identifier, for: indexPath) as? PosterStyleCell else {
+    let filteredSeoulAreas = seoulAreas.filter({
+      $0.properties.category == HotspotCategory.allCases[indexPath.section]
+    })
+    guard let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: PosterStyleCell.identifier,
+      for: indexPath
+    ) as? PosterStyleCell else {
       return .init()
     }
     let area = filteredSeoulAreas[indexPath.row]
@@ -61,7 +66,9 @@ extension HomeViewController: HomeViewDelegate {
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let filteredSeoulAreas = seoulAreas.filter({ $0.properties.category == HotspotCategory.allCases[indexPath.section] })
+    let filteredSeoulAreas = seoulAreas.filter({
+      $0.properties.category == HotspotCategory.allCases[indexPath.section]
+    })
     let area = filteredSeoulAreas[indexPath.row]
     
     let vc = PopulationDensityViewController()
@@ -70,13 +77,19 @@ extension HomeViewController: HomeViewDelegate {
   }
   
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-      guard kind == UICollectionView.elementKindSectionHeader else { return UICollectionReusableView() }
-      
-      let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeaderView.reuseIdentifier, for: indexPath) as! SectionHeaderView
-      let category = HotspotCategory.allCases[indexPath.section]
-      headerView.configure(with: category.title)
-      
-      return headerView
+    guard kind == UICollectionView.elementKindSectionHeader else { return UICollectionReusableView() }
+    
+    guard let headerView = collectionView.dequeueReusableSupplementaryView(
+      ofKind: kind,
+      withReuseIdentifier: SectionHeaderView.reuseIdentifier,
+      for: indexPath
+    ) as? SectionHeaderView else {
+      return SectionHeaderView(frame: .zero)
+    }
+    let category = HotspotCategory.allCases[indexPath.section]
+    headerView.configure(with: category.title)
+    
+    return headerView
   }
 }
 

@@ -91,8 +91,6 @@ extension CongestionChartView {
   }
   
   private func configureLabel(with level: CongestionLevel?) {
-    print(level)
-    
     let replaceString = "-"
     let text = "지금은 인구혼잡도가 \(level?.title ?? replaceString) 상태예요"
     let attributedString = NSMutableAttributedString(string: text)
@@ -231,8 +229,10 @@ extension CongestionChartView {
     
     override func draw(context: CGContext, point: CGPoint) {
       let sizeForText = text.size(withAttributes: [.font: font])
-      let rect = CGRect(origin: point, size: CGSize(width: sizeForText.width + 8, height: sizeForText.height + 8))
-        .offsetBy(dx: -sizeForText.width / 2 - 4, dy: -sizeForText.height - 10)
+      let rect = CGRect(
+        origin: point,
+        size: CGSize(width: sizeForText.width + 8, height: sizeForText.height + 8)
+      ).offsetBy(dx: -sizeForText.width / 2 - 4, dy: -sizeForText.height - 10)
       
       let clipPath = UIBezierPath(roundedRect: rect, cornerRadius: 4).cgPath
       context.addPath(clipPath)
@@ -242,7 +242,12 @@ extension CongestionChartView {
       
       let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: textColor]
       
-      let centeredStringRect = CGRect(x: rect.origin.x, y: rect.origin.y + (rect.height - sizeForText.height) / 2, width: rect.width, height: sizeForText.height)
+      let centeredStringRect = CGRect(
+        x: rect.origin.x,
+        y: rect.origin.y + (rect.height - sizeForText.height) / 2,
+        width: rect.width,
+        height: sizeForText.height
+      )
       
       text.draw(in: centeredStringRect, withAttributes: attributes)
     }

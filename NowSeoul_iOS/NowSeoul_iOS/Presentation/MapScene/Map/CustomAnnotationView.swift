@@ -17,8 +17,26 @@ class CustomAnnotationView: MKMarkerAnnotationView {
       let insetY: CGFloat = 5
       let center = CGPoint(x: rect.midX, y: rect.maxY - radius - insetY)
       let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: .pi, clockwise: true)
-      path.addQuadCurve(to: CGPoint(x: rect.midX, y: rect.minY + insetY), controlPoint: CGPoint(x: rect.midX - radius, y: center.y - offset))
-      path.addQuadCurve(to: CGPoint(x: rect.midX + radius, y: center.y), controlPoint: CGPoint(x: rect.midX + radius, y: center.y - offset))
+      path.addQuadCurve(
+        to: CGPoint(
+          x: rect.midX,
+          y: rect.minY + insetY
+        ),
+        controlPoint: CGPoint(
+          x: rect.midX - radius,
+          y: center.y - offset
+        )
+      )
+      path.addQuadCurve(
+        to: CGPoint(
+          x: rect.midX + radius,
+          y: center.y
+        ),
+        controlPoint: CGPoint(
+          x: rect.midX + radius,
+          y: center.y - offset
+        )
+      )
       path.close()
       UIColor.white.setFill()
       path.fill()
@@ -33,7 +51,7 @@ class CustomAnnotationView: MKMarkerAnnotationView {
     super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
     
     glyphImage = Self.glyphImage
-    markerTintColor = #colorLiteral(red: 0.005868499167, green: 0.5166643262, blue: 0.9889912009, alpha: 1)
+//    markerTintColor = #colorLiteral(red: 0.005868499167, green: 0.5166643262, blue: 0.9889912009, alpha: 1)
     
     configure(for: annotation)
   }

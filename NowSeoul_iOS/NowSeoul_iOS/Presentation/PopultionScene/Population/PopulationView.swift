@@ -16,12 +16,6 @@ final class PopulationView: BaseView {
   override func configView() {
     super.configView()
     configPieChartView()
-    
-    let sampleData = SeoulPopulationDTO.Data(
-      rate0: 5.0, rate10: 15.0, rate20: 25.0, rate30: 20.0,
-      rate40: 15.0, rate50: 10.0, rate60: 5.0, rate70: 5.0)
-    
-    updateChartData(with: sampleData)
   }
   
   override func configLayout() {
@@ -84,20 +78,6 @@ extension PopulationView {
     
     pieChartView.data = chartData
     pieChartView.rotationEnabled = false
-  }
-  
-  // 연령대별 인구 비율을 담는 임시 모델 구조체
-  struct SeoulPopulationDTO {
-    struct Data {
-      let rate0: Double?
-      let rate10: Double?
-      let rate20: Double?
-      let rate30: Double?
-      let rate40: Double?
-      let rate50: Double?
-      let rate60: Double?
-      let rate70: Double?
-    }
   }
 }
 

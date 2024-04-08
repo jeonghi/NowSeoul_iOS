@@ -84,7 +84,15 @@ function_body_length:
 legacy_hashing: error
 
 identifier_name:
-  excluded:
+  allowed_symbols: ["_"] # Allows underscores in variable names
+  min_length: 1          # Optional: Minimum length of variable names
+  max_length: # Optional: Maximum length of variable names
+    warning: 40
+    error: 60
+  excluded: # Optional: Names to exclude from this rule
+    - id
+    - URL
+    - GlobalConstants
     - i
     - id
     - x

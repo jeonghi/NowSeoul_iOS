@@ -88,7 +88,7 @@ extension HotspotArea: StylableFeature {
   }
   
   func configure(overlayRenderer: MKOverlayPathRenderer) {
-    if let level = StylableLevel(rawValue: self.congestionLevel.rawValue) {
+    if StylableLevel(rawValue: self.congestionLevel.rawValue) != nil {
       overlayRenderer.lineWidth = 2.0
       overlayRenderer.fillColor = UIColor.systemGray
     } else {

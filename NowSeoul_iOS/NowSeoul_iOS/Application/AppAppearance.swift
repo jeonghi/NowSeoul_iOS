@@ -8,44 +8,36 @@
 import UIKit
 import Then
 
-final class AppAppearance {
+enum AppAppearance {
   static func configure() {
     configureTabBarAppearance()
     configureNavigationBarApperance()
   }
   
   private static func configureNavigationBarApperance() {
-    let navigationBarAppearance = UINavigationBar.appearance()
-    
-    navigationBarAppearance.tintColor = UIColor.asset(.primary)
+    // UINavigationBarApperance || UINavigationBar.appearance()
+    let appearance = UINavigationBarAppearance()
     
     let titleTextAttributes: [NSAttributedString.Key: Any] = [
-      //      .font: UIFont.asset(.title1),
-      .foregroundColor: UIColor.asset(.normal)
+      .foregroundColor: UIColor.asset(.primary)
     ]
     
-    navigationBarAppearance.titleTextAttributes = titleTextAttributes
+    appearance.titleTextAttributes = titleTextAttributes
+    
+    let navigationBarAppearance = UINavigationBar.appearance()
+    navigationBarAppearance.standardAppearance = appearance
+    navigationBarAppearance.scrollEdgeAppearance = appearance
   }
   
   private static func configureTabBarAppearance() {
-    let tabBarAppearance = UITabBar.appearance()
-    
-    // 틴트 색상 설정
-    tabBarAppearance.tintColor = UIColor.asset(.primary)
-    //    tabBarAppearance.unselectedItemTintColor = UIColor.asset(.deselected)
-    
-    // 투명도 설정
-    tabBarAppearance.isTranslucent = false
-    
     let appearance = UITabBarAppearance()
+    appearance.configureWithOpaqueBackground()
+    appearance.backgroundColor = UIColor.systemBackground
     
-    // Customize the appearance as needed
-    appearance.configureWithOpaqueBackground() // Use an opaque background
-    appearance.backgroundColor = UIColor.systemBackground // Set to your preferred background color
-    
-    // Apply the appearance settings to both standardAppearance and scrollEdgeAppearance
+    let tabBarAppearance = UITabBar.appearance()
+    tabBarAppearance.tintColor = UIColor.asset(.primary)
+    tabBarAppearance.isTranslucent = false
     tabBarAppearance.standardAppearance = appearance
-    tabBarAppearance.scrollEdgeAppearance = appearance // This is crucial for iOS 15+ to prevent transparency when scrolled
-  
+    tabBarAppearance.scrollEdgeAppearance = appearance
   }
 }

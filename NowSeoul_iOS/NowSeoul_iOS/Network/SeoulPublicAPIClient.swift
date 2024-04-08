@@ -6,65 +6,56 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol SeoulPublicAPIClientType {
+  func fetchRealTimePopulationData(forArea areaCode: String, completion: @escaping (Result<SeoulPopulationDTO.Data?, Error>) -> Void)
   func fetchRealTimePopulationData(forArea areaId: Int, completion: @escaping (Result<SeoulPopulationDTO.Data?, Error>) -> Void)
   func fetchAllAreaRealTimePoulationData(forAreas areaIds: [Int], completion: @escaping (Result<[SeoulPopulationDTO.Data]?, Error>) -> Void)
 }
 
 final class SeoulPublicAPIClient {
   static let shared = SeoulPublicAPIClient()
-
+  
   private var baseConfigurationFileUrl: String {
     AppConfiguration.shared.baseConfigurationFileURL
   }
   
   private var baseUrl: String { AppConfiguration.shared.seoulPublicDataAPIBaseURL }
-
+  
   private init() {}
 }
 
 extension SeoulPublicAPIClient: SeoulPublicAPIClientType {
   func fetchRealTimePopulationData(forArea areaCode: String, completion: @escaping (Result<SeoulPopulationDTO.Data?, Error>) -> Void) {
-    let key = AppConfiguration.shared.seoulPublicDataAPIKey
+    let decoder = JSONDecoder()
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+    decoder.dateDecodingStrategy = .formatted(dateFormatter)
     
+    let key = AppConfiguration.shared.seoulPublicDataAPIKey
     let type = "json"
     let service = "citydata_ppltn"
     let startIndex = "1"
     let endIndex = "10"
-    
     let urlString = "\(baseUrl)/\(key)/\(type)/\(service)/\(startIndex)/\(endIndex)/\(areaCode)"
-      .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    /*.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""*/
     
-    guard let url = urlString?.toURL() else {
-      completion(.failure(NSError(domain: "No Data", code: 0)))
-      return
-    }
+    print(urlString)
     
-    let task = URLSession.shared.dataTask(with: url) { data, _, error in
-      if let error {
-        completion(.failure(error))
-        return
-      }
-      
-      guard let data else {
-        completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
-        return
-      }
-      
-      do {
-        let decodedResponse = try JSONDecoder().decode(SeoulPopulationDTO.Response.self, from: data)
-        
-        guard let data = decodedResponse.citydataPpltn?.first else {
-          completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
-          return
+    AF.request(urlString)
+      .responseDecodable(of: SeoulPopulationDTO.Response.self, decoder: decoder) { res in
+        switch res.result {
+        case .success(let res):
+          if let data = res.citydataPpltn?.first {
+            completion(.success(data))
+          } else {
+            completion(.success(nil))
+          }
+        case .failure(let error):
+          completion(.failure(error))
         }
-        completion(.success(data))
-      } catch {
-        completion(.failure(error))
       }
-    }
-    task.resume()
   }
   
   func fetchRealTimePopulationData(forArea areaId: Int, completion: @escaping (Result<SeoulPopulationDTO.Data?, Error>) -> Void) {

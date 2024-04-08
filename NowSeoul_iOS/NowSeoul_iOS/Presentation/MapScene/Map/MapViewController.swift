@@ -215,7 +215,11 @@ extension MapViewController: MapViewDelegate {
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    // TODO: 화면 전환
+    let hotspot = seoulAreas[indexPath.row]
+    let vc = AreaDetailViewController()
+    vc.navigationItem.title = hotspot.title
+    vc.areaCode = hotspot.properties.areaCode
+    self.navigationController?.pushViewController(vc, animated: true)
   }
   
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

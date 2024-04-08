@@ -18,17 +18,12 @@ final class MainTabBarController: UITabBarController {
     $0.tabBarItem = Tab.map.tabItem
   }
   
-//  lazy var settingViewController = SettingViewController().then {
-//    $0.tabBarItem = Tab.setting.tabItem
-//  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
     self.viewControllers = [
-      homeViewController,
-      mapViewController
-//      settingViewController
+      homeViewController.wrapToNavigationViewController(),
+      mapViewController.wrapToNavigationViewController()
     ]
   }
 }

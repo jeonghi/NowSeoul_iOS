@@ -30,30 +30,9 @@ final class PopulationView: BaseView {
     super.configHierarchy()
     addSubview(pieChartView)
   }
-}
-
-extension PopulationView {
-  private func configPieChartView() {
-    // 범례 스타일 조정
-    pieChartView.legend.enabled = false
-    pieChartView.legend.verticalAlignment = .bottom
-    pieChartView.legend.horizontalAlignment = .left
-    pieChartView.legend.orientation = .horizontal
-    pieChartView.legend.drawInside = true
-    pieChartView.legend.form = .circle
-    pieChartView.legend.formSize = 12
-    pieChartView.legend.font = UIFont.systemFont(ofSize: 12)
-    pieChartView.legend.textColor = UIColor.darkGray
-    
-    
-    // 중앙 텍스트 스타일링
-    pieChartView.holeRadiusPercent = 0.5
-    pieChartView.transparentCircleRadiusPercent = 0.55
-    pieChartView.centerText = "연령대별 인구비율"
-    pieChartView.centerTextRadiusPercent = 1
-  }
   
-  func updateChartData(with data: SeoulPopulationDTO.Data) {
+  func configure(with model: SeoulPopulationDTO.Data?) {
+    guard let data = model else { return }
     var entries: [PieChartDataEntry] = []
     
     if let rate0 = data.rate0 { entries.append(PieChartDataEntry(value: rate0, label: "10대 미만")) }
@@ -79,6 +58,42 @@ extension PopulationView {
     pieChartView.data = chartData
     pieChartView.rotationEnabled = false
   }
+}
+
+extension PopulationView {
+  private func configPieChartView() {
+    // 범례 스타일 조정
+    pieChartView.legend.enabled = false
+    pieChartView.legend.verticalAlignment = .bottom
+    pieChartView.legend.horizontalAlignment = .left
+    pieChartView.legend.orientation = .horizontal
+    pieChartView.legend.drawInside = true
+    pieChartView.legend.form = .circle
+    pieChartView.legend.formSize = 12
+    pieChartView.legend.font = UIFont.systemFont(ofSize: 12)
+    pieChartView.legend.textColor = UIColor.darkGray
+    
+    
+    // 중앙 텍스트 스타일링
+    pieChartView.holeRadiusPercent = 0.5
+    pieChartView.transparentCircleRadiusPercent = 0.55
+    pieChartView.centerText = "연령대별"
+    pieChartView.centerTextRadiusPercent = 1
+  }
+  
+  //  // 연령대별 인구 비율을 담는 임시 모델 구조체
+  //  struct SeoulPopulationDTO {
+  //    struct Data {
+  //      let rate0: Double?
+  //      let rate10: Double?
+  //      let rate20: Double?
+  //      let rate30: Double?
+  //      let rate40: Double?
+  //      let rate50: Double?
+  //      let rate60: Double?
+  //      let rate70: Double?
+  //    }
+  //  }
 }
 
 @available(iOS 17.0, *)

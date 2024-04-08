@@ -40,7 +40,6 @@
 		5B4DC1712BA9B3EB002A9D6F /* UIViewController+hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1702BA9B3EB002A9D6F /* UIViewController+hideKeyboard.swift */; };
 		5B4DC1762BA9EA5B002A9D6F /* HotSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1752BA9EA5B002A9D6F /* HotSpotView.swift */; };
 		5B4DC1792BA9EBA1002A9D6F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5B4DC1782BA9EBA1002A9D6F /* Kingfisher */; };
-		5B4F1D032BB33B5800BC1136 /* PopulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F1D022BB33B5800BC1136 /* PopulationView.swift */; };
 		5B4F79CD2BAD24E200645AFA /* CongestionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F79CC2BAD24E200645AFA /* CongestionLevel.swift */; };
 		5B51375F2BAD9E3C00471392 /* MDFDecodableFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51375E2BAD9E3C00471392 /* MDFDecodableFeature.swift */; };
 		5B5137622BADA0B800471392 /* HotspotArea+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5137612BADA0B800471392 /* HotspotArea+Style.swift */; };
@@ -58,9 +57,7 @@
 		5B5F0B6A2B9AE12700554E2E /* DateFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5F0B692B9AE12700554E2E /* DateFormatManager.swift */; };
 		5B6659A42BAF16E1006C93B4 /* HotspotCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6659A32BAF16E1006C93B4 /* HotspotCarouselCell.swift */; };
 		5B6659A72BAF2B15006C93B4 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6659A62BAF2B15006C93B4 /* SkeletonView */; };
-		5B6659AE2BAF3605006C93B4 /* GenderRatioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6659AD2BAF3605006C93B4 /* GenderRatioView.swift */; };
 		5B6659B32BAF3B1B006C93B4 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6659B22BAF3B1B006C93B4 /* DGCharts */; };
-		5B6659B52BAF3F5C006C93B4 /* CongestionChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6659B42BAF3F5C006C93B4 /* CongestionChartView.swift */; };
 		5B6886F12B9C5B2900B75DE5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6886F02B9C5B2900B75DE5 /* SnapKit */; };
 		5B6886F42B9C5B5500B75DE5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886F32B9C5B5500B75DE5 /* BaseViewController.swift */; };
 		5B6886F72B9C5BCA00B75DE5 /* BaseViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886F62B9C5BCA00B75DE5 /* BaseViewConfigurable.swift */; };
@@ -73,13 +70,21 @@
 		5B7A81502BB0816900DA092E /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7A814F2BB0816900DA092E /* SectionHeaderView.swift */; };
 		5B7A81522BB0834200DA092E /* PosterStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7A81512BB0834200DA092E /* PosterStyleCell.swift */; };
 		5B7A81582BB08C3400DA092E /* populationData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B7A81572BB08C3400DA092E /* populationData.json */; };
-		5B7A815A2BB08C5600DA092E /* PopulationDensityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7A81592BB08C5600DA092E /* PopulationDensityViewController.swift */; };
 		5B7E25AC2B9A0667001CA577 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7E25AB2B9A0667001CA577 /* AppConfiguration.swift */; };
 		5B7E25AF2B9A0BAD001CA577 /* SeoulPublicAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7E25AE2B9A0BAD001CA577 /* SeoulPublicAPIClient.swift */; };
 		5B7E25B22B9A122B001CA577 /* SeoulPopulationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7E25B12B9A122B001CA577 /* SeoulPopulationDTO.swift */; };
 		5B7E25B52B9A14E5001CA577 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7E25B42B9A14E5001CA577 /* String+Extension.swift */; };
 		5B8A2C142BAC132A000F8666 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A2C132BAC132A000F8666 /* BaseCollectionViewCell.swift */; };
 		5B8A2C162BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A2C152BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift */; };
+		5BBCBC5F2BC4149E004D68A5 /* AreaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC532BC4149D004D68A5 /* AreaDetailViewController.swift */; };
+		5BBCBC602BC4149E004D68A5 /* CongestionBarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC542BC4149E004D68A5 /* CongestionBarChartCell.swift */; };
+		5BBCBC612BC4149E004D68A5 /* PopulationPieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC552BC4149E004D68A5 /* PopulationPieChartCell.swift */; };
+		5BBCBC622BC4149E004D68A5 /* CongestionChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC572BC4149E004D68A5 /* CongestionChartView.swift */; };
+		5BBCBC632BC4149E004D68A5 /* GenderRatioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC582BC4149E004D68A5 /* GenderRatioView.swift */; };
+		5BBCBC642BC4149E004D68A5 /* PopulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC592BC4149E004D68A5 /* PopulationView.swift */; };
+		5BBCBC652BC4149E004D68A5 /* ChartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC5B2BC4149E004D68A5 /* ChartHeaderView.swift */; };
+		5BBCBC672BC41640004D68A5 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC662BC41640004D68A5 /* UIViewController+Navigation.swift */; };
+		5BBCBC6A2BC41739004D68A5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5BBCBC692BC41739004D68A5 /* Alamofire */; };
 		5BC8F0F02BAB1D760013C605 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC8F0EF2BAB1D760013C605 /* HeaderCollectionReusableView.swift */; };
 		5BC8F0F22BAB1DFC0013C605 /* NSObject+id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC8F0F12BAB1DFC0013C605 /* NSObject+id.swift */; };
 		5BCE6BEB2B9984F700FFE73E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE6BEA2B9984F700FFE73E /* AppDelegate.swift */; };
@@ -121,7 +126,6 @@
 		5B4DC16C2BA9AF13002A9D6F /* UIView+addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviews.swift"; sourceTree = "<group>"; };
 		5B4DC1702BA9B3EB002A9D6F /* UIViewController+hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboard.swift"; sourceTree = "<group>"; };
 		5B4DC1752BA9EA5B002A9D6F /* HotSpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSpotView.swift; sourceTree = "<group>"; };
-		5B4F1D022BB33B5800BC1136 /* PopulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationView.swift; sourceTree = "<group>"; };
 		5B4F79CC2BAD24E200645AFA /* CongestionLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongestionLevel.swift; sourceTree = "<group>"; };
 		5B51375E2BAD9E3C00471392 /* MDFDecodableFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDFDecodableFeature.swift; sourceTree = "<group>"; };
 		5B5137612BADA0B800471392 /* HotspotArea+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HotspotArea+Style.swift"; sourceTree = "<group>"; };
@@ -134,8 +138,6 @@
 		5B5B92502BAD704E00FF157D /* HotspotAreaFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotAreaFeature.swift; sourceTree = "<group>"; };
 		5B5F0B692B9AE12700554E2E /* DateFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatManager.swift; sourceTree = "<group>"; };
 		5B6659A32BAF16E1006C93B4 /* HotspotCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotCarouselCell.swift; sourceTree = "<group>"; };
-		5B6659AD2BAF3605006C93B4 /* GenderRatioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderRatioView.swift; sourceTree = "<group>"; };
-		5B6659B42BAF3F5C006C93B4 /* CongestionChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongestionChartView.swift; sourceTree = "<group>"; };
 		5B6886F32B9C5B5500B75DE5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5B6886F62B9C5BCA00B75DE5 /* BaseViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfigurable.swift; sourceTree = "<group>"; };
 		5B6886F82B9C5BE600B75DE5 /* BaseComponentConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseComponentConfigurable.swift; sourceTree = "<group>"; };
@@ -146,7 +148,6 @@
 		5B7A814F2BB0816900DA092E /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		5B7A81512BB0834200DA092E /* PosterStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterStyleCell.swift; sourceTree = "<group>"; };
 		5B7A81572BB08C3400DA092E /* populationData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = populationData.json; sourceTree = "<group>"; };
-		5B7A81592BB08C5600DA092E /* PopulationDensityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationDensityViewController.swift; sourceTree = "<group>"; };
 		5B7E25A92B9A043E001CA577 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		5B7E25AA2B9A0463001CA577 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
 		5B7E25AB2B9A0667001CA577 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
@@ -155,6 +156,14 @@
 		5B7E25B42B9A14E5001CA577 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		5B8A2C132BAC132A000F8666 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		5B8A2C152BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulHotspotAreaDataManager.swift; sourceTree = "<group>"; };
+		5BBCBC532BC4149D004D68A5 /* AreaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaDetailViewController.swift; sourceTree = "<group>"; };
+		5BBCBC542BC4149E004D68A5 /* CongestionBarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongestionBarChartCell.swift; sourceTree = "<group>"; };
+		5BBCBC552BC4149E004D68A5 /* PopulationPieChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopulationPieChartCell.swift; sourceTree = "<group>"; };
+		5BBCBC572BC4149E004D68A5 /* CongestionChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongestionChartView.swift; sourceTree = "<group>"; };
+		5BBCBC582BC4149E004D68A5 /* GenderRatioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderRatioView.swift; sourceTree = "<group>"; };
+		5BBCBC592BC4149E004D68A5 /* PopulationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopulationView.swift; sourceTree = "<group>"; };
+		5BBCBC5B2BC4149E004D68A5 /* ChartHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartHeaderView.swift; sourceTree = "<group>"; };
+		5BBCBC662BC41640004D68A5 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		5BC8F0EF2BAB1D760013C605 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		5BC8F0F12BAB1DFC0013C605 /* NSObject+id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+id.swift"; sourceTree = "<group>"; };
 		5BCE6BE72B9984F700FFE73E /* NowSeoul_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NowSeoul_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +187,7 @@
 				5B0988B82BB107AD000855A8 /* FirebaseMessaging in Frameworks */,
 				5B5B923E2BAD56DF00FF157D /* Realm in Frameworks */,
 				5B5B92402BAD56DF00FF157D /* RealmSwift in Frameworks */,
+				5BBCBC6A2BC41739004D68A5 /* Alamofire in Frameworks */,
 				5B6659A72BAF2B15006C93B4 /* SkeletonView in Frameworks */,
 				5B6659B32BAF3B1B006C93B4 /* DGCharts in Frameworks */,
 				5B0988B62BB107AD000855A8 /* FirebaseCrashlytics in Frameworks */,
@@ -419,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4DC1702BA9B3EB002A9D6F /* UIViewController+hideKeyboard.swift */,
+				5BBCBC662BC41640004D68A5 /* UIViewController+Navigation.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -451,20 +462,10 @@
 		5B6659A82BAF32EA006C93B4 /* PopultionScene */ = {
 			isa = PBXGroup;
 			children = (
-				5B6659A92BAF330C006C93B4 /* Population */,
+				5BBCBC532BC4149D004D68A5 /* AreaDetailViewController.swift */,
+				5BBCBC5E2BC4149E004D68A5 /* Population */,
 			);
 			path = PopultionScene;
-			sourceTree = "<group>";
-		};
-		5B6659A92BAF330C006C93B4 /* Population */ = {
-			isa = PBXGroup;
-			children = (
-				5B6659AD2BAF3605006C93B4 /* GenderRatioView.swift */,
-				5B6659B42BAF3F5C006C93B4 /* CongestionChartView.swift */,
-				5B7A81592BB08C5600DA092E /* PopulationDensityViewController.swift */,
-				5B4F1D022BB33B5800BC1136 /* PopulationView.swift */,
-			);
-			path = Population;
 			sourceTree = "<group>";
 		};
 		5B6886E62B9C438E00B75DE5 /* DTO */ = {
@@ -584,6 +585,51 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		5BBCBC562BC4149E004D68A5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5BBCBC542BC4149E004D68A5 /* CongestionBarChartCell.swift */,
+				5BBCBC552BC4149E004D68A5 /* PopulationPieChartCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5BBCBC5A2BC4149E004D68A5 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				5BBCBC572BC4149E004D68A5 /* CongestionChartView.swift */,
+				5BBCBC582BC4149E004D68A5 /* GenderRatioView.swift */,
+				5BBCBC592BC4149E004D68A5 /* PopulationView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		5BBCBC5C2BC4149E004D68A5 /* ReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				5BBCBC5B2BC4149E004D68A5 /* ChartHeaderView.swift */,
+			);
+			path = ReusableView;
+			sourceTree = "<group>";
+		};
+		5BBCBC5D2BC4149E004D68A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5BBCBC562BC4149E004D68A5 /* Cell */,
+				5BBCBC5A2BC4149E004D68A5 /* Component */,
+				5BBCBC5C2BC4149E004D68A5 /* ReusableView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5BBCBC5E2BC4149E004D68A5 /* Population */ = {
+			isa = PBXGroup;
+			children = (
+				5BBCBC5D2BC4149E004D68A5 /* View */,
+			);
+			path = Population;
+			sourceTree = "<group>";
+		};
 		5BC8F0EE2BAB1D1C0013C605 /* ReusableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -658,6 +704,7 @@
 				5B0988B32BB107AD000855A8 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				5B0988B52BB107AD000855A8 /* FirebaseCrashlytics */,
 				5B0988B72BB107AD000855A8 /* FirebaseMessaging */,
+				5BBCBC692BC41739004D68A5 /* Alamofire */,
 			);
 			productName = NowSeoul_iOS;
 			productReference = 5BCE6BE72B9984F700FFE73E /* NowSeoul_iOS.app */;
@@ -696,6 +743,7 @@
 				5B6659A52BAF2B15006C93B4 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				5B6659B12BAF3B1B006C93B4 /* XCRemoteSwiftPackageReference "Charts" */,
 				5B0988B22BB107AD000855A8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5BBCBC682BC41739004D68A5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 5BCE6BE82B9984F700FFE73E /* Products */;
 			projectDirPath = "";
@@ -787,15 +835,16 @@
 				5B51375F2BAD9E3C00471392 /* MDFDecodableFeature.swift in Sources */,
 				5B77E8D02BB010030084DCE9 /* Int+Extension.swift in Sources */,
 				5B4026462BAFFDFA007352AF /* CarouselFlowLayout.swift in Sources */,
+				5BBCBC642BC4149E004D68A5 /* PopulationView.swift in Sources */,
 				5B4DC1392BA9735A002A9D6F /* HomeViewModel.swift in Sources */,
 				5B7E25AF2B9A0BAD001CA577 /* SeoulPublicAPIClient.swift in Sources */,
-				5B7A815A2BB08C5600DA092E /* PopulationDensityViewController.swift in Sources */,
-				5B4F1D032BB33B5800BC1136 /* PopulationView.swift in Sources */,
 				5B8A2C162BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift in Sources */,
 				5B4DC1642BA99D5A002A9D6F /* FontAsset+Constants.swift in Sources */,
+				5BBCBC602BC4149E004D68A5 /* CongestionBarChartCell.swift in Sources */,
 				5B5B924E2BAD6EB500FF157D /* Feature.swift in Sources */,
 				5B5137622BADA0B800471392 /* HotspotArea+Style.swift in Sources */,
 				5B7E25B52B9A14E5001CA577 /* String+Extension.swift in Sources */,
+				5BBCBC612BC4149E004D68A5 /* PopulationPieChartCell.swift in Sources */,
 				5B5248CB2BAAC67F002048A9 /* HotspotCategory.swift in Sources */,
 				5B49078B2BAA917F00A654C0 /* SettingViewController.swift in Sources */,
 				5BCE6BEF2B9984F700FFE73E /* ViewController.swift in Sources */,
@@ -803,10 +852,12 @@
 				5B4DC15A2BA99C7C002A9D6F /* FontAsset.swift in Sources */,
 				5B7A81522BB0834200DA092E /* PosterStyleCell.swift in Sources */,
 				5B4DC15C2BA99C84002A9D6F /* UIFont+FontAsset.swift in Sources */,
+				5BBCBC5F2BC4149E004D68A5 /* AreaDetailViewController.swift in Sources */,
 				5B4DC1562BA99C6E002A9D6F /* ColorAsset.swift in Sources */,
 				5B4DC1582BA99C77002A9D6F /* UIColor+ColorAsset.swift in Sources */,
 				5B4DC1762BA9EA5B002A9D6F /* HotSpotView.swift in Sources */,
 				5B6887052B9C5EA700B75DE5 /* MapView.swift in Sources */,
+				5BBCBC622BC4149E004D68A5 /* CongestionChartView.swift in Sources */,
 				5B4DC14B2BA99B16002A9D6F /* String+localizable.swift in Sources */,
 				5B5B92492BAD6E4200FF157D /* StylableFeature.swift in Sources */,
 				5B4DC1442BA97651002A9D6F /* BaseViewModel.swift in Sources */,
@@ -818,6 +869,7 @@
 				5B4DC16D2BA9AF13002A9D6F /* UIView+addSubviews.swift in Sources */,
 				5B4DC1462BA97764002A9D6F /* BaseViewModelConfigurable.swift in Sources */,
 				5B6659A42BAF16E1006C93B4 /* HotspotCarouselCell.swift in Sources */,
+				5BBCBC632BC4149E004D68A5 /* GenderRatioView.swift in Sources */,
 				5BC8F0F02BAB1D760013C605 /* HeaderCollectionReusableView.swift in Sources */,
 				5B4DC1622BA99D4F002A9D6F /* ColorAsset+Constants.swift in Sources */,
 				5B5F0B6A2B9AE12700554E2E /* DateFormatManager.swift in Sources */,
@@ -827,19 +879,19 @@
 				5B4DC1372BA97352002A9D6F /* HomeView.swift in Sources */,
 				5B4DC1422BA97517002A9D6F /* MainTabBarController.swift in Sources */,
 				5B4DC1352BA9734B002A9D6F /* HomeViewController.swift in Sources */,
+				5BBCBC652BC4149E004D68A5 /* ChartHeaderView.swift in Sources */,
 				5BCE6BED2B9984F700FFE73E /* SceneDelegate.swift in Sources */,
 				5B4DC1712BA9B3EB002A9D6F /* UIViewController+hideKeyboard.swift in Sources */,
 				5B6886FE2B9C5CEA00B75DE5 /* BaseView.swift in Sources */,
 				5B8A2C142BAC132A000F8666 /* BaseCollectionViewCell.swift in Sources */,
 				5B4DC15E2BA99C8B002A9D6F /* ImageAsset.swift in Sources */,
 				5B4F79CD2BAD24E200645AFA /* CongestionLevel.swift in Sources */,
+				5BBCBC672BC41640004D68A5 /* UIViewController+Navigation.swift in Sources */,
 				5B4DC16B2BA9AAFC002A9D6F /* HomeSearchBar.swift in Sources */,
 				5B4DC1662BA99D65002A9D6F /* ImageAsset+Constants.swift in Sources */,
 				5B6887012B9C5E6C00B75DE5 /* MapViewController.swift in Sources */,
 				5B4DC13D2BA974BC002A9D6F /* Observable.swift in Sources */,
-				5B6659AE2BAF3605006C93B4 /* GenderRatioView.swift in Sources */,
 				5BC8F0F22BAB1DFC0013C605 /* NSObject+id.swift in Sources */,
-				5B6659B52BAF3F5C006C93B4 /* CongestionChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,6 +1193,14 @@
 				version = 3.0.0;
 			};
 		};
+		5BBCBC682BC41739004D68A5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1193,6 +1253,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B6886FA2B9C5C5700B75DE5 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		5BBCBC692BC41739004D68A5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BBCBC682BC41739004D68A5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

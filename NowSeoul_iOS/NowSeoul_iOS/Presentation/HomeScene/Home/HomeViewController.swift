@@ -71,9 +71,11 @@ extension HomeViewController: HomeViewDelegate {
     })
     let area = filteredSeoulAreas[indexPath.row]
     
-    let vc = PopulationDensityViewController()
+    let vc = AreaDetailViewController()
+    vc.navigationItem.title = area.title
     vc.areaCode = area.properties.areaCode
-    self.present(vc, animated: true)
+    self.navigationController?
+      .pushViewController(vc, animated: true)
   }
   
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

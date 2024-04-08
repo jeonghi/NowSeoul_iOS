@@ -40,7 +40,8 @@ final class CongestionChartView: BaseView {
     barChartView.snp.makeConstraints {
       $0.top.equalTo(congestionLevelLabel.snp.bottom).offset(20)
       $0.horizontalEdges.equalTo(self).inset(20)
-      $0.height.equalTo(300)
+      $0.height.greaterThanOrEqualTo(300)
+      $0.bottom.equalToSuperview().inset(30)
     }
   }
   
@@ -231,8 +232,15 @@ extension CongestionChartView {
       let sizeForText = text.size(withAttributes: [.font: font])
       let rect = CGRect(
         origin: point,
-        size: CGSize(width: sizeForText.width + 8, height: sizeForText.height + 8)
-      ).offsetBy(dx: -sizeForText.width / 2 - 4, dy: -sizeForText.height - 10)
+        size: CGSize(
+          width: sizeForText.width + 8,
+          height: sizeForText.height + 8
+        )
+      )
+        .offsetBy(
+          dx: -sizeForText.width / 2 - 4,
+          dy: -sizeForText.height - 10
+        )
       
       let clipPath = UIBezierPath(roundedRect: rect, cornerRadius: 4).cgPath
       context.addPath(clipPath)
@@ -244,7 +252,9 @@ extension CongestionChartView {
       
       let centeredStringRect = CGRect(
         x: rect.origin.x,
-        y: rect.origin.y + (rect.height - sizeForText.height) / 2,
+        y: rect.origin.y + (
+          rect.height - sizeForText.height
+        ) / 2,
         width: rect.width,
         height: sizeForText.height
       )

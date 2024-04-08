@@ -7,7 +7,7 @@
 
 import MapKit
 
-final class HotspotArea: Feature<HotspotArea.Properties>, MKAnnotation {
+final class HotspotAreaFeature: Feature<HotspotAreaFeature.Properties>, MKAnnotation {
   var title: String? { properties.areaName }
   var subtitle: String? { properties.category.title }
   

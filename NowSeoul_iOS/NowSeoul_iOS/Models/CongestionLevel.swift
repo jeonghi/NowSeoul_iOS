@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CongestionLevel: Int, CaseIterable, Decodable {
+enum CongestionLevel: Int, Hashable, CaseIterable, Codable {
   case crowded = 0 // 붐빔 (100% 초과)
   case slightlyCrowded // 약간 붐빔 (75% ..<100)
   case moderate // 보통 (50% ..<75)

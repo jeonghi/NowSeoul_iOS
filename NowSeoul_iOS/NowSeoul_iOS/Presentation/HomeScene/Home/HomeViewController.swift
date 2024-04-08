@@ -18,7 +18,7 @@ final class HomeViewController: BaseViewController {
   }
   
   var seoulHotspotAreaDataManager: SeoulHotspotAreaDataManager { .shared }
-  private var seoulAreas = [HotspotArea]()
+  private var seoulAreas = [HotspotAreaFeature]()
   
   override func loadView() {
     view = mainView

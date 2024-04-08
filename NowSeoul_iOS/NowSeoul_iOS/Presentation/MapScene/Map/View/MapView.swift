@@ -47,9 +47,7 @@ final class MapView: BaseView {
   weak var delegate: MapViewDelegate? {
     didSet {
       mapView.delegate = delegate
-      mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: CustomAnnotationView.identifier)
       mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKAnnotationView.identifier)
-      
       collectionView.register(HotspotCarouselCell.self, forCellWithReuseIdentifier: HotspotCarouselCell.identifier)
       collectionView.delegate = delegate
       collectionView.dataSource = delegate

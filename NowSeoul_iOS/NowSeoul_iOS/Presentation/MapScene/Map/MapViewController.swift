@@ -19,6 +19,23 @@ final class MapViewController: BaseViewController {
   var seoulRegion: MKCoordinateRegion {
     .init(center: seoulCenter, latitudinalMeters: 50000, longitudinalMeters: 50000)
   }
+//
+//  var outerCoordinates: [CLLocationCoordinate2D] = {
+//    var array = [CLLocationCoordinate2D]()
+//    for i in -90...90 {
+//        array.append(CLLocationCoordinate2D(latitude: Double(i), longitude: -180))
+//    }
+//    for i in -180...180 {
+//        array.append(CLLocationCoordinate2D(latitude: 90, longitude: Double(i)))
+//    }
+//    for i in -90...90 {
+//        array.append(CLLocationCoordinate2D(latitude: Double(i * -1), longitude: 180))
+//    }
+//    for i in -180...180 {
+//        array.append(CLLocationCoordinate2D(latitude: -90, longitude: Double(i * -1)))
+//    }
+//    return array
+//  }()
   
   var seoulHotspotAreaDataManager: SeoulHotspotAreaDataManager { .shared }
   
@@ -28,7 +45,7 @@ final class MapViewController: BaseViewController {
     }
   }
   
-  private var seoulAreas = [HotspotArea]()
+  private var seoulAreas = [HotspotAreaFeature]()
   private var currOverlays = [MKOverlay]()
   private var currAnnotations = [MKAnnotation]()
   
@@ -43,11 +60,15 @@ final class MapViewController: BaseViewController {
     updateMapView {
       seoulAreas.removeAll()
       seoulAreas = seoulHotspotAreaDataManager.hotspotAreas
-      seoulAreas.forEach { seoulArea in
+      let innerCoordinates = seoulAreas.compactMap { seoulArea in
         if let polygon = seoulArea.geometry.first as? MKPolygon {
-          currOverlays.append(polygon)
+          return polygon
         }
+        return nil
       }
+//      let polygon = MKPolygon(coordinates: outerCoordinates, count: outerCoordinates.count, interiorPolygons: innerCoordinates )
+//      currOverlays.append(polygon)
+      currOverlays.append(contentsOf: innerCoordinates)
       currAnnotations.append(contentsOf: seoulAreas)
     }
   }
@@ -120,7 +141,7 @@ extension MapViewController: MapViewDelegate {
     }
     
     if let stylableFeature = annotation as? StylableFeature {
-      if stylableFeature is HotspotArea {
+      if stylableFeature is HotspotAreaFeature {
         let annotationView = MKMarkerAnnotationView(
           annotation: annotation,
           reuseIdentifier: MKMarkerAnnotationView.identifier
@@ -132,42 +153,6 @@ extension MapViewController: MapViewDelegate {
     }
     
     return nil
-    /*
-     //    guard let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: CustomAnnotationView.identifier, for: annotation) as? CustomAnnotationView else {
-     //      return nil
-     //    }
-     
-     //    annotationView.configure(for: annotation)
-     //    return annotationView
-     
-     //    if let clusterAnnotation = annotation as? MKClusterAnnotation {
-     //      // 클러스터 어노테이션에 대한 처리
-     //      let identifier = "Cluster"
-     //      var view: MKAnnotationView
-     //      if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
-     //        dequeuedView.annotation = clusterAnnotation
-     //        view = dequeuedView
-     //      } else {
-     //        view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-     //        // 클러스터 뷰 커스터마이징
-     //      }
-     //      return view
-     //    } else {
-     //      // 일반 어노테이션에 대한 처리
-     //      let identifier = "Annotation"
-     //      var view: MKMarkerAnnotationView
-     //      if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
-     //        dequeuedView.annotation = annotation
-     //        view = dequeuedView
-     //      } else {
-     //        view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-     //        view.clusteringIdentifier = "cluster"
-     //        view.image = UIImage(systemName: "mappin")
-     //        // 어노테이션 뷰 커스터마이징
-     //      }
-     //      return view
-     //    }
-     */
   }
   
   func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
@@ -180,7 +165,7 @@ extension MapViewController: MapViewDelegate {
   }
   
   func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-    guard let annotation = view.annotation as? HotspotArea else { return }
+    guard let annotation = view.annotation as? HotspotAreaFeature else { return }
     
     let coordinate = annotation.coordinate
     mapView.setCenter(coordinate, animated: true)
@@ -203,7 +188,10 @@ extension MapViewController: MapViewDelegate {
     // 애니메이션 적용시 부자연스러워 미적용
     if visibleIndexPath.row != index {
       mainView.collectionView.scrollToItem(
-        at: IndexPath(item: index, section: 0),
+        at: IndexPath(
+          item: index,
+          section: 0
+        ),
         at: .centeredHorizontally,
         animated: false
       )
@@ -227,26 +215,12 @@ extension MapViewController: MapViewDelegate {
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let hotspot = seoulAreas[indexPath.row]
-    let vc = PopulationDensityViewController()
-    vc.areaCode = hotspot.properties.areaCode
-    self.present(vc, animated: true)
+    // TODO: 화면 전환
   }
   
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-    updateCenterCard()
-  }
-  
-  private func updateCenterCard() {
-    // mainView.collectionView.center
-    // UIView.center는 UIView의 SuperView의 좌표계 기준으로 좌표를 반환한다.
-    // mainView.vStackView 좌표 시스템의 포인트를 구체적인 뷰의 좌표 시스템으로 변환한다.
-    // 기준좌표계 뷰.(바꿀녀석, to: 바꿀좌표계 뷰)
-    // 바꿀녀석은
-    let center = mainView.vStackView.convert(
-      mainView.collectionView.center,
-      to: mainView.collectionView
-    )
+    let center = mainView.vStackView.convert(scrollView.center, to: scrollView)
+    
     // 그래서 UIView의 vStackView좌표계에 속한. center 좌표를, 그 자체적인 좌표로 변환시킨다.
     if let centerIndexPath = mainView.collectionView.indexPathForItem(at: center) {
       centerCardChanged(centerIndexPath)

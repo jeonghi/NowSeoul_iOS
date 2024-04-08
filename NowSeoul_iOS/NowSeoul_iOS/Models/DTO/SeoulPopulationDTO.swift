@@ -8,19 +8,27 @@
 import Foundation
 
 enum SeoulPopulationDTO {
-  struct Response: Decodable, DTO {
+  struct Response: Decodable, Hashable {
     let citydataPpltn: [SeoulPopulationDTO.Data]?
+    let result: APIResult
+    
+    enum CodingKeys: String, CodingKey {
+      case citydataPpltn = "SeoulRtd.citydata_ppltn"
+      case result = "RESULT"
+    }
+  }
+  
+  struct APIResult: Decodable, Hashable {
     let resultCode: String?
     let resultMessage: String?
     
     enum CodingKeys: String, CodingKey {
-      case citydataPpltn = "SeoulRtd.citydata_ppltn"
       case resultCode = "RESULT.CODE"
       case resultMessage = "RESULT.MESSAGE"
     }
   }
   
-  struct Data: Decodable {
+  struct Data: Codable, Hashable {
     let areaName: String
     let areaCode: String
     let congestionLevel: CongestionLevel // 인구 밀집도
@@ -77,29 +85,30 @@ enum SeoulPopulationDTO {
       self.malePopulationRate = try container.decodeIfPresent(String.self, forKey: .malePopulationRate)?.toDouble()
       self.femalePopulationRate = try container.decodeIfPresent(String.self, forKey: .femalePopulationRate)?.toDouble()
       
-      if let dateString = try container.decodeIfPresent(String.self, forKey: .populationTime),
-         let date = DateFormatManager.shared.dateFromString(dateString, format: "yyyy-MM-dd HH:mm") {
-        self.populationTime = date
-      } else {
-        self.populationTime = nil
-      }
+      self.populationTime = try container.decodeIfPresent(Date.self, forKey: .populationTime)
       
       self.forecastPopulation = try container.decodeIfPresent([Forecast].self, forKey: .forecastPopulation)
       
-      rate0 = try container.decodeIfPresent(Double.self, forKey: .rate0)
-      rate10 = try container.decodeIfPresent(Double.self, forKey: .rate10)
-      rate20 = try container.decodeIfPresent(Double.self, forKey: .rate20)
-      rate30 = try container.decodeIfPresent(Double.self, forKey: .rate30)
-      rate40 = try container.decodeIfPresent(Double.self, forKey: .rate40)
-      rate50 = try container.decodeIfPresent(Double.self, forKey: .rate50)
-      rate60 = try container.decodeIfPresent(Double.self, forKey: .rate60)
-      rate70 = try container.decodeIfPresent(Double.self, forKey: .rate70)
-      residentPopulationRate = try container.decodeIfPresent(Double.self, forKey: .residentPopulationRate)
-      nonResidentPopulationRate = try container.decodeIfPresent(Double.self, forKey: .nonResidentPopulationRate)
+      rate0 = try container.decodeIfPresent(String.self, forKey: .rate0)?.toDouble()
+      rate10 = try container.decodeIfPresent(String.self, forKey: .rate10)?.toDouble()
+      rate20 = try container.decodeIfPresent(String.self, forKey: .rate20)?.toDouble()
+      rate30 = try container.decodeIfPresent(String.self, forKey: .rate30)?.toDouble()
+      rate40 = try container.decodeIfPresent(String.self, forKey: .rate40)?.toDouble()
+      rate50 = try container.decodeIfPresent(String.self, forKey: .rate50)?.toDouble()
+      rate60 = try container.decodeIfPresent(String.self, forKey: .rate60)?.toDouble()
+      rate70 = try container.decodeIfPresent(String.self, forKey: .rate70)?.toDouble()
+      residentPopulationRate = try container.decodeIfPresent(String.self, forKey: .residentPopulationRate)?.toDouble()
+      
+      let nonResidentPopulationRateString = try container.decodeIfPresent(
+        String.self,
+        forKey: .nonResidentPopulationRate
+      )
+      
+      nonResidentPopulationRate = nonResidentPopulationRateString?.toDouble()
     }
   }
   
-  struct Forecast: Decodable {
+  struct Forecast: Codable, Hashable {
     let forecastTime: Date? // 예상 시간
     let congestionLevel: CongestionLevel // 혼잡도
     let populationMin: Double? //
@@ -115,12 +124,7 @@ enum SeoulPopulationDTO {
     init(from decoder: any Decoder) throws {
       let container: KeyedDecodingContainer<CodingKeys> = try decoder.container(keyedBy: CodingKeys.self)
       
-      if let dateString = try container.decodeIfPresent(String.self, forKey: .forecastTime),
-         let date = DateFormatManager.shared.dateFromString(dateString, format: "yyyy-MM-dd HH:mm") {
-        self.forecastTime = date
-      } else {
-        self.forecastTime = nil
-      }
+      self.forecastTime = try container.decodeIfPresent(Date.self, forKey: .forecastTime)
       self.congestionLevel = try container.decode(CongestionLevel.self, forKey: .congestionLevel)
       self.populationMin = try container.decodeIfPresent(String.self, forKey: .populationMin)?.toDouble()
       self.populationMax = try container.decodeIfPresent(String.self, forKey: .populationMax)?.toDouble()

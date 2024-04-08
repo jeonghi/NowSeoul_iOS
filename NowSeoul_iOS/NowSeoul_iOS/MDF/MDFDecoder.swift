@@ -33,10 +33,10 @@ private struct MDFArchive {
 final class MDFDecoder {
   private let geoJSONDecoder = MKGeoJSONDecoder()
   
-  func decodeHotspotAreaFeatures() throws -> [HotspotArea] {
+  func decodeHotspotAreaFeatures() throws -> [HotspotAreaFeature] {
     let archive = MDFArchive()
     
-    let hotspotAreas = try decodeFeature(HotspotArea.self, from: .seoulHotspots, in: archive)
+    let hotspotAreas = try decodeFeature(HotspotAreaFeature.self, from: .seoulHotspots, in: archive)
     
     return hotspotAreas
   }

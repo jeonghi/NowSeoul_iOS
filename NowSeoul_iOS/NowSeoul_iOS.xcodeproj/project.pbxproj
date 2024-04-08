@@ -46,17 +46,13 @@
 		5B5137622BADA0B800471392 /* HotspotArea+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5137612BADA0B800471392 /* HotspotArea+Style.swift */; };
 		5B5248C62BAAC5FE002048A9 /* seoul_hotspots_113.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 5B5248C52BAAC5FE002048A9 /* seoul_hotspots_113.geojson */; };
 		5B5248CB2BAAC67F002048A9 /* HotspotCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5248CA2BAAC67F002048A9 /* HotspotCategory.swift */; };
-		5B5B92362BAD557100FF157D /* POIDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B92352BAD557100FF157D /* POIDTO.swift */; };
-		5B5B92382BAD559C00FF157D /* POIEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B92372BAD559C00FF157D /* POIEntity.swift */; };
-		5B5B923B2BAD560900FF157D /* POIRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B923A2BAD560900FF157D /* POIRealm.swift */; };
 		5B5B923E2BAD56DF00FF157D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5B5B923D2BAD56DF00FF157D /* Realm */; };
 		5B5B92402BAD56DF00FF157D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B5B923F2BAD56DF00FF157D /* RealmSwift */; };
-		5B5B92432BAD621500FF157D /* POIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B92422BAD621500FF157D /* POIRepository.swift */; };
 		5B5B92452BAD62BA00FF157D /* seoul_hotspots_113.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B5B92442BAD62BA00FF157D /* seoul_hotspots_113.json */; };
 		5B5B92472BAD6B3800FF157D /* MDFDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B92462BAD6B3800FF157D /* MDFDecoder.swift */; };
 		5B5B92492BAD6E4200FF157D /* StylableFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B92482BAD6E4200FF157D /* StylableFeature.swift */; };
 		5B5B924E2BAD6EB500FF157D /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B924D2BAD6EB500FF157D /* Feature.swift */; };
-		5B5B92512BAD704E00FF157D /* HotspotArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B92502BAD704E00FF157D /* HotspotArea.swift */; };
+		5B5B92512BAD704E00FF157D /* HotspotAreaFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B92502BAD704E00FF157D /* HotspotAreaFeature.swift */; };
 		5B5F0B642B9A995A00554E2E /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E25A92B9A043E001CA577 /* debug.xcconfig */; };
 		5B5F0B652B9A995D00554E2E /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E25AA2B9A0463001CA577 /* release.xcconfig */; };
 		5B5F0B6A2B9AE12700554E2E /* DateFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5F0B692B9AE12700554E2E /* DateFormatManager.swift */; };
@@ -65,7 +61,6 @@
 		5B6659AE2BAF3605006C93B4 /* GenderRatioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6659AD2BAF3605006C93B4 /* GenderRatioView.swift */; };
 		5B6659B32BAF3B1B006C93B4 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6659B22BAF3B1B006C93B4 /* DGCharts */; };
 		5B6659B52BAF3F5C006C93B4 /* CongestionChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6659B42BAF3F5C006C93B4 /* CongestionChartView.swift */; };
-		5B6886E52B9C3D8500B75DE5 /* DTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886E42B9C3D8500B75DE5 /* DTOMapper.swift */; };
 		5B6886F12B9C5B2900B75DE5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6886F02B9C5B2900B75DE5 /* SnapKit */; };
 		5B6886F42B9C5B5500B75DE5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886F32B9C5B5500B75DE5 /* BaseViewController.swift */; };
 		5B6886F72B9C5BCA00B75DE5 /* BaseViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886F62B9C5BCA00B75DE5 /* BaseViewConfigurable.swift */; };
@@ -85,7 +80,6 @@
 		5B7E25B52B9A14E5001CA577 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7E25B42B9A14E5001CA577 /* String+Extension.swift */; };
 		5B8A2C142BAC132A000F8666 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A2C132BAC132A000F8666 /* BaseCollectionViewCell.swift */; };
 		5B8A2C162BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A2C152BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift */; };
-		5B8A2C182BAC25E7000F8666 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A2C172BAC25E7000F8666 /* CustomAnnotationView.swift */; };
 		5BC8F0F02BAB1D760013C605 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC8F0EF2BAB1D760013C605 /* HeaderCollectionReusableView.swift */; };
 		5BC8F0F22BAB1DFC0013C605 /* NSObject+id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC8F0F12BAB1DFC0013C605 /* NSObject+id.swift */; };
 		5BCE6BEB2B9984F700FFE73E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE6BEA2B9984F700FFE73E /* AppDelegate.swift */; };
@@ -133,20 +127,15 @@
 		5B5137612BADA0B800471392 /* HotspotArea+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HotspotArea+Style.swift"; sourceTree = "<group>"; };
 		5B5248C52BAAC5FE002048A9 /* seoul_hotspots_113.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = seoul_hotspots_113.geojson; sourceTree = "<group>"; };
 		5B5248CA2BAAC67F002048A9 /* HotspotCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotCategory.swift; sourceTree = "<group>"; };
-		5B5B92352BAD557100FF157D /* POIDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIDTO.swift; sourceTree = "<group>"; };
-		5B5B92372BAD559C00FF157D /* POIEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIEntity.swift; sourceTree = "<group>"; };
-		5B5B923A2BAD560900FF157D /* POIRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIRealm.swift; sourceTree = "<group>"; };
-		5B5B92422BAD621500FF157D /* POIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIRepository.swift; sourceTree = "<group>"; };
 		5B5B92442BAD62BA00FF157D /* seoul_hotspots_113.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seoul_hotspots_113.json; sourceTree = "<group>"; };
 		5B5B92462BAD6B3800FF157D /* MDFDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDFDecoder.swift; sourceTree = "<group>"; };
 		5B5B92482BAD6E4200FF157D /* StylableFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylableFeature.swift; sourceTree = "<group>"; };
 		5B5B924D2BAD6EB500FF157D /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
-		5B5B92502BAD704E00FF157D /* HotspotArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotArea.swift; sourceTree = "<group>"; };
+		5B5B92502BAD704E00FF157D /* HotspotAreaFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotAreaFeature.swift; sourceTree = "<group>"; };
 		5B5F0B692B9AE12700554E2E /* DateFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatManager.swift; sourceTree = "<group>"; };
 		5B6659A32BAF16E1006C93B4 /* HotspotCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotCarouselCell.swift; sourceTree = "<group>"; };
 		5B6659AD2BAF3605006C93B4 /* GenderRatioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderRatioView.swift; sourceTree = "<group>"; };
 		5B6659B42BAF3F5C006C93B4 /* CongestionChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongestionChartView.swift; sourceTree = "<group>"; };
-		5B6886E42B9C3D8500B75DE5 /* DTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOMapper.swift; sourceTree = "<group>"; };
 		5B6886F32B9C5B5500B75DE5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5B6886F62B9C5BCA00B75DE5 /* BaseViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewConfigurable.swift; sourceTree = "<group>"; };
 		5B6886F82B9C5BE600B75DE5 /* BaseComponentConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseComponentConfigurable.swift; sourceTree = "<group>"; };
@@ -166,7 +155,6 @@
 		5B7E25B42B9A14E5001CA577 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		5B8A2C132BAC132A000F8666 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		5B8A2C152BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulHotspotAreaDataManager.swift; sourceTree = "<group>"; };
-		5B8A2C172BAC25E7000F8666 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		5BC8F0EF2BAB1D760013C605 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		5BC8F0F12BAB1DFC0013C605 /* NSObject+id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+id.swift"; sourceTree = "<group>"; };
 		5BCE6BE72B9984F700FFE73E /* NowSeoul_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NowSeoul_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -435,28 +423,12 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		5B5B92392BAD560000FF157D /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				5B5B923A2BAD560900FF157D /* POIRealm.swift */,
-			);
-			path = Realm;
-			sourceTree = "<group>";
-		};
-		5B5B92412BAD620700FF157D /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				5B5B92422BAD621500FF157D /* POIRepository.swift */,
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
 		5B5B924A2BAD6E8500FF157D /* MDFModel */ = {
 			isa = PBXGroup;
 			children = (
 				5B5137602BADA07300471392 /* Style */,
 				5B5B924D2BAD6EB500FF157D /* Feature.swift */,
-				5B5B92502BAD704E00FF157D /* HotspotArea.swift */,
+				5B5B92502BAD704E00FF157D /* HotspotAreaFeature.swift */,
 			);
 			path = MDFModel;
 			sourceTree = "<group>";
@@ -464,7 +436,6 @@
 		5B5B924F2BAD6FD300FF157D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				5B5B92372BAD559C00FF157D /* POIEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -496,19 +467,10 @@
 			path = Population;
 			sourceTree = "<group>";
 		};
-		5B6886DF2B9C3CB400B75DE5 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				5B6886E42B9C3D8500B75DE5 /* DTOMapper.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		5B6886E62B9C438E00B75DE5 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
 				5B7E25B12B9A122B001CA577 /* SeoulPopulationDTO.swift */,
-				5B5B92352BAD557100FF157D /* POIDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -563,10 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				5B6887002B9C5E6C00B75DE5 /* MapViewController.swift */,
-				5B6887042B9C5EA700B75DE5 /* MapView.swift */,
-				5B8A2C172BAC25E7000F8666 /* CustomAnnotationView.swift */,
-				5B6659A32BAF16E1006C93B4 /* HotspotCarouselCell.swift */,
-				5B4026452BAFFDFA007352AF /* CarouselFlowLayout.swift */,
+				5BBCBC4A2BC410D3004D68A5 /* View */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -585,8 +544,6 @@
 				5B5248CA2BAAC67F002048A9 /* HotspotCategory.swift */,
 				5B6886E62B9C438E00B75DE5 /* DTO */,
 				5B5B924F2BAD6FD300FF157D /* Entity */,
-				5B5B92392BAD560000FF157D /* Realm */,
-				5B6886DF2B9C3CB400B75DE5 /* Protocols */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -599,6 +556,32 @@
 				5B77E8CF2BB010030084DCE9 /* Int+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5BBCBC4A2BC410D3004D68A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B6887042B9C5EA700B75DE5 /* MapView.swift */,
+				5BBCBC4C2BC41149004D68A5 /* Cell */,
+				5BBCBC4B2BC41144004D68A5 /* Layout */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5BBCBC4B2BC41144004D68A5 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				5B4026452BAFFDFA007352AF /* CarouselFlowLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		5BBCBC4C2BC41149004D68A5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5B6659A32BAF16E1006C93B4 /* HotspotCarouselCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		5BC8F0EE2BAB1D1C0013C605 /* ReusableView */ = {
@@ -631,7 +614,6 @@
 			children = (
 				5B0988B02BB1072D000855A8 /* GoogleService-Info.plist */,
 				5B51375D2BAD9D1200471392 /* MDF */,
-				5B5B92412BAD620700FF157D /* Persistence */,
 				5B5248CC2BAAC7A4002048A9 /* Localize */,
 				5B5248C42BAAC4B4002048A9 /* Resources */,
 				5B4DC14C2BA99BCB002A9D6F /* Application */,
@@ -821,7 +803,6 @@
 				5B4DC15A2BA99C7C002A9D6F /* FontAsset.swift in Sources */,
 				5B7A81522BB0834200DA092E /* PosterStyleCell.swift in Sources */,
 				5B4DC15C2BA99C84002A9D6F /* UIFont+FontAsset.swift in Sources */,
-				5B5B92362BAD557100FF157D /* POIDTO.swift in Sources */,
 				5B4DC1562BA99C6E002A9D6F /* ColorAsset.swift in Sources */,
 				5B4DC1582BA99C77002A9D6F /* UIColor+ColorAsset.swift in Sources */,
 				5B4DC1762BA9EA5B002A9D6F /* HotSpotView.swift in Sources */,
@@ -831,17 +812,13 @@
 				5B4DC1442BA97651002A9D6F /* BaseViewModel.swift in Sources */,
 				5B7E25B22B9A122B001CA577 /* SeoulPopulationDTO.swift in Sources */,
 				5B6886F92B9C5BE600B75DE5 /* BaseComponentConfigurable.swift in Sources */,
-				5B5B923B2BAD560900FF157D /* POIRealm.swift in Sources */,
 				5B4DC1602BA99C92002A9D6F /* UIImage+ImageAsset.swift in Sources */,
-				5B8A2C182BAC25E7000F8666 /* CustomAnnotationView.swift in Sources */,
-				5B5B92512BAD704E00FF157D /* HotspotArea.swift in Sources */,
+				5B5B92512BAD704E00FF157D /* HotspotAreaFeature.swift in Sources */,
 				5B6886F72B9C5BCA00B75DE5 /* BaseViewConfigurable.swift in Sources */,
 				5B4DC16D2BA9AF13002A9D6F /* UIView+addSubviews.swift in Sources */,
 				5B4DC1462BA97764002A9D6F /* BaseViewModelConfigurable.swift in Sources */,
 				5B6659A42BAF16E1006C93B4 /* HotspotCarouselCell.swift in Sources */,
-				5B5B92432BAD621500FF157D /* POIRepository.swift in Sources */,
 				5BC8F0F02BAB1D760013C605 /* HeaderCollectionReusableView.swift in Sources */,
-				5B5B92382BAD559C00FF157D /* POIEntity.swift in Sources */,
 				5B4DC1622BA99D4F002A9D6F /* ColorAsset+Constants.swift in Sources */,
 				5B5F0B6A2B9AE12700554E2E /* DateFormatManager.swift in Sources */,
 				5BCE6BEB2B9984F700FFE73E /* AppDelegate.swift in Sources */,
@@ -851,7 +828,6 @@
 				5B4DC1422BA97517002A9D6F /* MainTabBarController.swift in Sources */,
 				5B4DC1352BA9734B002A9D6F /* HomeViewController.swift in Sources */,
 				5BCE6BED2B9984F700FFE73E /* SceneDelegate.swift in Sources */,
-				5B6886E52B9C3D8500B75DE5 /* DTOMapper.swift in Sources */,
 				5B4DC1712BA9B3EB002A9D6F /* UIViewController+hideKeyboard.swift in Sources */,
 				5B6886FE2B9C5CEA00B75DE5 /* BaseView.swift in Sources */,
 				5B8A2C142BAC132A000F8666 /* BaseCollectionViewCell.swift in Sources */,

@@ -8,7 +8,7 @@
 import MapKit
 import Kingfisher
 
-extension HotspotArea: StylableFeature {
+extension HotspotAreaFeature: StylableFeature {
   private enum StylableCategory: Int {
     case touristZone = 0
     case culturalHeritage

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HotspotCategory: Int, CaseIterable, Decodable {
+enum HotspotCategory: Int, Hashable, CaseIterable, Decodable {
   case touristZone = 0
   case culturalHeritage
   case denselyPopulatedArea

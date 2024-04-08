@@ -93,7 +93,7 @@ class PosterStyleCell: BaseCollectionViewCell {
     gradientView.layer.insertSublayer(gradientLayer, at: 0)
   }
   
-  func configure(with hotspot: HotspotArea) {
+  func configure(with hotspot: HotspotAreaFeature) {
     titleLabel.text = hotspot.title
     subtitleLabel.text = hotspot.subtitle
     

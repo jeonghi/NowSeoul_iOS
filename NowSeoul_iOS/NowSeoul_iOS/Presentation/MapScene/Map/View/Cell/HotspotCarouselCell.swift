@@ -79,7 +79,7 @@ class HotspotCarouselCell: BaseCollectionViewCell {
     }
   }
   
-  func configure(with hotspot: HotspotArea) {
+  func configure(with hotspot: HotspotAreaFeature) {
     nameLabel.text = hotspot.title
     categoryLabel.text = hotspot.subtitle
     

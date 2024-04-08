@@ -20,11 +20,6 @@ final class HomeView: BaseView {
   lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout()).then {
     $0.backgroundColor = .clear
     $0.register(
-      CollectionViewHeader.self,
-      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-      withReuseIdentifier: CollectionViewHeader.identifier
-    )
-    $0.register(
       SectionHeaderView.self,
       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
       withReuseIdentifier: SectionHeaderView.reuseIdentifier

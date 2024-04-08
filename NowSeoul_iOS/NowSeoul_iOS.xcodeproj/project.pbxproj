@@ -22,7 +22,6 @@
 		5B4DC1422BA97517002A9D6F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1412BA97517002A9D6F /* MainTabBarController.swift */; };
 		5B4DC1442BA97651002A9D6F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1432BA97651002A9D6F /* BaseViewModel.swift */; };
 		5B4DC1462BA97764002A9D6F /* BaseViewModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1452BA97764002A9D6F /* BaseViewModelConfigurable.swift */; };
-		5B4DC1492BA99AA1002A9D6F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5B4DC1482BA99AA1002A9D6F /* Localizable.xcstrings */; };
 		5B4DC14B2BA99B16002A9D6F /* String+localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC14A2BA99B16002A9D6F /* String+localizable.swift */; };
 		5B4DC14E2BA99BE7002A9D6F /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC14D2BA99BE7002A9D6F /* AppAppearance.swift */; };
 		5B4DC1562BA99C6E002A9D6F /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1552BA99C6E002A9D6F /* ColorAsset.swift */; };
@@ -35,7 +34,6 @@
 		5B4DC1642BA99D5A002A9D6F /* FontAsset+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1632BA99D5A002A9D6F /* FontAsset+Constants.swift */; };
 		5B4DC1662BA99D65002A9D6F /* ImageAsset+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1652BA99D64002A9D6F /* ImageAsset+Constants.swift */; };
 		5B4DC1682BA99E3D002A9D6F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4DC1672BA99E3D002A9D6F /* Colors.xcassets */; };
-		5B4DC16B2BA9AAFC002A9D6F /* HomeSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC16A2BA9AAFC002A9D6F /* HomeSearchBar.swift */; };
 		5B4DC16D2BA9AF13002A9D6F /* UIView+addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC16C2BA9AF13002A9D6F /* UIView+addSubviews.swift */; };
 		5B4DC1712BA9B3EB002A9D6F /* UIViewController+hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1702BA9B3EB002A9D6F /* UIViewController+hideKeyboard.swift */; };
 		5B4DC1762BA9EA5B002A9D6F /* HotSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1752BA9EA5B002A9D6F /* HotSpotView.swift */; };
@@ -85,7 +83,12 @@
 		5BBCBC652BC4149E004D68A5 /* ChartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC5B2BC4149E004D68A5 /* ChartHeaderView.swift */; };
 		5BBCBC672BC41640004D68A5 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC662BC41640004D68A5 /* UIViewController+Navigation.swift */; };
 		5BBCBC6A2BC41739004D68A5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5BBCBC692BC41739004D68A5 /* Alamofire */; };
-		5BC8F0F02BAB1D760013C605 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC8F0EF2BAB1D760013C605 /* HeaderCollectionReusableView.swift */; };
+		5BBCBC6E2BC41A8C004D68A5 /* CulturalEventCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC6D2BC41A8C004D68A5 /* CulturalEventCalendarViewController.swift */; };
+		5BBCBC712BC41AA9004D68A5 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5BBCBC702BC41AA9004D68A5 /* FSCalendar */; };
+		5BBCBC752BC41B09004D68A5 /* CulturalEventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC742BC41B09004D68A5 /* CulturalEventListCell.swift */; };
+		5BBCBC772BC41B50004D68A5 /* CulturalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC762BC41B50004D68A5 /* CulturalEvent.swift */; };
+		5BBCBC792BC41BAB004D68A5 /* CulturalEventDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC782BC41BAB004D68A5 /* CulturalEventDTO.swift */; };
+		5BBCBC7B2BC41E45004D68A5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5BBCBC7A2BC41E45004D68A5 /* Localizable.xcstrings */; };
 		5BC8F0F22BAB1DFC0013C605 /* NSObject+id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC8F0F12BAB1DFC0013C605 /* NSObject+id.swift */; };
 		5BCE6BEB2B9984F700FFE73E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE6BEA2B9984F700FFE73E /* AppDelegate.swift */; };
 		5BCE6BED2B9984F700FFE73E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE6BEC2B9984F700FFE73E /* SceneDelegate.swift */; };
@@ -109,7 +112,6 @@
 		5B4DC1412BA97517002A9D6F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		5B4DC1432BA97651002A9D6F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		5B4DC1452BA97764002A9D6F /* BaseViewModelConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelConfigurable.swift; sourceTree = "<group>"; };
-		5B4DC1482BA99AA1002A9D6F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		5B4DC14A2BA99B16002A9D6F /* String+localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+localizable.swift"; sourceTree = "<group>"; };
 		5B4DC14D2BA99BE7002A9D6F /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		5B4DC1552BA99C6E002A9D6F /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
@@ -122,7 +124,6 @@
 		5B4DC1632BA99D5A002A9D6F /* FontAsset+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FontAsset+Constants.swift"; sourceTree = "<group>"; };
 		5B4DC1652BA99D64002A9D6F /* ImageAsset+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageAsset+Constants.swift"; sourceTree = "<group>"; };
 		5B4DC1672BA99E3D002A9D6F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		5B4DC16A2BA9AAFC002A9D6F /* HomeSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchBar.swift; sourceTree = "<group>"; };
 		5B4DC16C2BA9AF13002A9D6F /* UIView+addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviews.swift"; sourceTree = "<group>"; };
 		5B4DC1702BA9B3EB002A9D6F /* UIViewController+hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboard.swift"; sourceTree = "<group>"; };
 		5B4DC1752BA9EA5B002A9D6F /* HotSpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSpotView.swift; sourceTree = "<group>"; };
@@ -164,7 +165,11 @@
 		5BBCBC592BC4149E004D68A5 /* PopulationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopulationView.swift; sourceTree = "<group>"; };
 		5BBCBC5B2BC4149E004D68A5 /* ChartHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartHeaderView.swift; sourceTree = "<group>"; };
 		5BBCBC662BC41640004D68A5 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
-		5BC8F0EF2BAB1D760013C605 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		5BBCBC6D2BC41A8C004D68A5 /* CulturalEventCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulturalEventCalendarViewController.swift; sourceTree = "<group>"; };
+		5BBCBC742BC41B09004D68A5 /* CulturalEventListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulturalEventListCell.swift; sourceTree = "<group>"; };
+		5BBCBC762BC41B50004D68A5 /* CulturalEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulturalEvent.swift; sourceTree = "<group>"; };
+		5BBCBC782BC41BAB004D68A5 /* CulturalEventDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulturalEventDTO.swift; sourceTree = "<group>"; };
+		5BBCBC7A2BC41E45004D68A5 /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		5BC8F0F12BAB1DFC0013C605 /* NSObject+id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+id.swift"; sourceTree = "<group>"; };
 		5BCE6BE72B9984F700FFE73E /* NowSeoul_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NowSeoul_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCE6BEA2B9984F700FFE73E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B4DC1792BA9EBA1002A9D6F /* Kingfisher in Frameworks */,
+				5BBCBC712BC41AA9004D68A5 /* FSCalendar in Frameworks */,
 				5B6886F12B9C5B2900B75DE5 /* SnapKit in Frameworks */,
 				5B0988B82BB107AD000855A8 /* FirebaseMessaging in Frameworks */,
 				5B5B923E2BAD56DF00FF157D /* Realm in Frameworks */,
@@ -344,7 +350,6 @@
 			children = (
 				5BC8F0EE2BAB1D1C0013C605 /* ReusableView */,
 				5B4DC1742BA9EA18002A9D6F /* Cell */,
-				5B4DC16A2BA9AAFC002A9D6F /* HomeSearchBar.swift */,
 				5B4DC1752BA9EA5B002A9D6F /* HotSpotView.swift */,
 			);
 			path = View;
@@ -419,8 +424,8 @@
 			isa = PBXGroup;
 			children = (
 				5B4DC14A2BA99B16002A9D6F /* String+localizable.swift */,
+				5BBCBC7A2BC41E45004D68A5 /* Localizable.xcstrings */,
 				5B49078E2BAA95AC00A654C0 /* InfoPlist.xcstrings */,
-				5B4DC1482BA99AA1002A9D6F /* Localizable.xcstrings */,
 			);
 			path = Localize;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				5B7E25B12B9A122B001CA577 /* SeoulPopulationDTO.swift */,
+				5BBCBC782BC41BAB004D68A5 /* CulturalEventDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 		5B6886FF2B9C5E5B00B75DE5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5BBCBC6B2BC41A43004D68A5 /* CulturalEventScene */,
 				5B4DC14F2BA99C26002A9D6F /* Style */,
 				5B6886F22B9C5B4D00B75DE5 /* Base */,
 				5B6659A82BAF32EA006C93B4 /* PopultionScene */,
@@ -545,6 +552,7 @@
 				5B5248CA2BAAC67F002048A9 /* HotspotCategory.swift */,
 				5B6886E62B9C438E00B75DE5 /* DTO */,
 				5B5B924F2BAD6FD300FF157D /* Entity */,
+				5BBCBC762BC41B50004D68A5 /* CulturalEvent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -630,10 +638,42 @@
 			path = Population;
 			sourceTree = "<group>";
 		};
+		5BBCBC6B2BC41A43004D68A5 /* CulturalEventScene */ = {
+			isa = PBXGroup;
+			children = (
+				5BBCBC6C2BC41A51004D68A5 /* CulturalEventCalendar */,
+			);
+			path = CulturalEventScene;
+			sourceTree = "<group>";
+		};
+		5BBCBC6C2BC41A51004D68A5 /* CulturalEventCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				5BBCBC722BC41AEB004D68A5 /* View */,
+				5BBCBC6D2BC41A8C004D68A5 /* CulturalEventCalendarViewController.swift */,
+			);
+			path = CulturalEventCalendar;
+			sourceTree = "<group>";
+		};
+		5BBCBC722BC41AEB004D68A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5BBCBC732BC41AF7004D68A5 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5BBCBC732BC41AF7004D68A5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5BBCBC742BC41B09004D68A5 /* CulturalEventListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		5BC8F0EE2BAB1D1C0013C605 /* ReusableView */ = {
 			isa = PBXGroup;
 			children = (
-				5BC8F0EF2BAB1D760013C605 /* HeaderCollectionReusableView.swift */,
 				5B7A814F2BB0816900DA092E /* SectionHeaderView.swift */,
 			);
 			name = ReusableView;
@@ -705,6 +745,7 @@
 				5B0988B52BB107AD000855A8 /* FirebaseCrashlytics */,
 				5B0988B72BB107AD000855A8 /* FirebaseMessaging */,
 				5BBCBC692BC41739004D68A5 /* Alamofire */,
+				5BBCBC702BC41AA9004D68A5 /* FSCalendar */,
 			);
 			productName = NowSeoul_iOS;
 			productReference = 5BCE6BE72B9984F700FFE73E /* NowSeoul_iOS.app */;
@@ -744,6 +785,7 @@
 				5B6659B12BAF3B1B006C93B4 /* XCRemoteSwiftPackageReference "Charts" */,
 				5B0988B22BB107AD000855A8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5BBCBC682BC41739004D68A5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5BBCBC6F2BC41AA9004D68A5 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 5BCE6BE82B9984F700FFE73E /* Products */;
 			projectDirPath = "";
@@ -765,12 +807,12 @@
 				5BCE6C032B999EE800FFE73E /* .swiftlint.yml in Resources */,
 				5BCE6BF42B9984F800FFE73E /* Assets.xcassets in Resources */,
 				5B49078F2BAA95AC00A654C0 /* InfoPlist.xcstrings in Resources */,
+				5BBCBC7B2BC41E45004D68A5 /* Localizable.xcstrings in Resources */,
 				5BCE6BF72B9984F800FFE73E /* Base in Resources */,
 				5B5B92452BAD62BA00FF157D /* seoul_hotspots_113.json in Resources */,
 				5B5F0B642B9A995A00554E2E /* debug.xcconfig in Resources */,
 				5B5248C62BAAC5FE002048A9 /* seoul_hotspots_113.geojson in Resources */,
 				5B4DC1682BA99E3D002A9D6F /* Colors.xcassets in Resources */,
-				5B4DC1492BA99AA1002A9D6F /* Localizable.xcstrings in Resources */,
 				5BCE6BF22B9984F700FFE73E /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -837,12 +879,14 @@
 				5B4026462BAFFDFA007352AF /* CarouselFlowLayout.swift in Sources */,
 				5BBCBC642BC4149E004D68A5 /* PopulationView.swift in Sources */,
 				5B4DC1392BA9735A002A9D6F /* HomeViewModel.swift in Sources */,
+				5BBCBC752BC41B09004D68A5 /* CulturalEventListCell.swift in Sources */,
 				5B7E25AF2B9A0BAD001CA577 /* SeoulPublicAPIClient.swift in Sources */,
 				5B8A2C162BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift in Sources */,
 				5B4DC1642BA99D5A002A9D6F /* FontAsset+Constants.swift in Sources */,
 				5BBCBC602BC4149E004D68A5 /* CongestionBarChartCell.swift in Sources */,
 				5B5B924E2BAD6EB500FF157D /* Feature.swift in Sources */,
 				5B5137622BADA0B800471392 /* HotspotArea+Style.swift in Sources */,
+				5BBCBC792BC41BAB004D68A5 /* CulturalEventDTO.swift in Sources */,
 				5B7E25B52B9A14E5001CA577 /* String+Extension.swift in Sources */,
 				5BBCBC612BC4149E004D68A5 /* PopulationPieChartCell.swift in Sources */,
 				5B5248CB2BAAC67F002048A9 /* HotspotCategory.swift in Sources */,
@@ -870,8 +914,9 @@
 				5B4DC1462BA97764002A9D6F /* BaseViewModelConfigurable.swift in Sources */,
 				5B6659A42BAF16E1006C93B4 /* HotspotCarouselCell.swift in Sources */,
 				5BBCBC632BC4149E004D68A5 /* GenderRatioView.swift in Sources */,
-				5BC8F0F02BAB1D760013C605 /* HeaderCollectionReusableView.swift in Sources */,
+				5BBCBC772BC41B50004D68A5 /* CulturalEvent.swift in Sources */,
 				5B4DC1622BA99D4F002A9D6F /* ColorAsset+Constants.swift in Sources */,
+				5BBCBC6E2BC41A8C004D68A5 /* CulturalEventCalendarViewController.swift in Sources */,
 				5B5F0B6A2B9AE12700554E2E /* DateFormatManager.swift in Sources */,
 				5BCE6BEB2B9984F700FFE73E /* AppDelegate.swift in Sources */,
 				5B7E25AC2B9A0667001CA577 /* AppConfiguration.swift in Sources */,
@@ -887,7 +932,6 @@
 				5B4DC15E2BA99C8B002A9D6F /* ImageAsset.swift in Sources */,
 				5B4F79CD2BAD24E200645AFA /* CongestionLevel.swift in Sources */,
 				5BBCBC672BC41640004D68A5 /* UIViewController+Navigation.swift in Sources */,
-				5B4DC16B2BA9AAFC002A9D6F /* HomeSearchBar.swift in Sources */,
 				5B4DC1662BA99D65002A9D6F /* ImageAsset+Constants.swift in Sources */,
 				5B6887012B9C5E6C00B75DE5 /* MapViewController.swift in Sources */,
 				5B4DC13D2BA974BC002A9D6F /* Observable.swift in Sources */,
@@ -1201,6 +1245,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		5BBCBC6F2BC41AA9004D68A5 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1258,6 +1310,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5BBCBC682BC41739004D68A5 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		5BBCBC702BC41AA9004D68A5 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BBCBC6F2BC41AA9004D68A5 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

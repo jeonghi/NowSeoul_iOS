@@ -120,6 +120,23 @@
         }
       }
     },
+    "tab_event_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Event"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "행사"
+          }
+        }
+      }
+    },
     "tab_home_title" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -18,12 +18,17 @@ final class MainTabBarController: UITabBarController {
     $0.tabBarItem = Tab.map.tabItem
   }
   
+  private lazy var culturalEventViewController = CulturalEventCalendarViewController().then {
+    $0.tabBarItem = Tab.event.tabItem
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
     self.viewControllers = [
       homeViewController.wrapToNavigationViewController(),
-      mapViewController.wrapToNavigationViewController()
+      mapViewController.wrapToNavigationViewController(),
+      culturalEventViewController.wrapToNavigationViewController()
     ]
   }
 }
@@ -32,6 +37,7 @@ extension MainTabBarController {
   private enum Tab {
     case home
     case map
+    case event
     case setting
     
     var localizedTitleKey: String {
@@ -40,6 +46,8 @@ extension MainTabBarController {
         return "tab_home_title"
       case .map:
         return "tab_map_title"
+      case .event:
+        return "tab_event_title"
       case .setting:
         return "tab_setting_title"
       }
@@ -55,6 +63,8 @@ extension MainTabBarController {
         return ImageAsset.homeTab
       case .map:
         return ImageAsset.mapTab
+      case .event:
+        return ImageAsset.eventTab
       case .setting:
         return ImageAsset.settingTab
       }
@@ -66,6 +76,8 @@ extension MainTabBarController {
         return ImageAsset.homeTab
       case .map:
         return ImageAsset.mapTab
+      case .event:
+        return ImageAsset.eventTab
       case .setting:
         return ImageAsset.settingTab
       }

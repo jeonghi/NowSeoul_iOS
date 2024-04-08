@@ -12,5 +12,5 @@ extension ImageAsset {
   static let mapTab = UIImage(systemName: "map.fill")
   static let homeTab = UIImage(systemName: "chart.bar.doc.horizontal.fill")
   static let settingTab = UIImage(systemName: "line.horizontal.3.circle.fill")
-  static let homeSearchBarImage = ImageAsset("searchBarImage", in: .main, format: .image)
+  static let eventTab = UIImage(systemName: "ticket.fill")
 }

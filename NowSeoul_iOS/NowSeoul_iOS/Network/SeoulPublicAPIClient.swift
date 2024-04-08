@@ -12,6 +12,7 @@ protocol SeoulPublicAPIClientType {
   func fetchRealTimePopulationData(forArea areaCode: String, completion: @escaping (Result<SeoulPopulationDTO.Data?, Error>) -> Void)
   func fetchRealTimePopulationData(forArea areaId: Int, completion: @escaping (Result<SeoulPopulationDTO.Data?, Error>) -> Void)
   func fetchAllAreaRealTimePoulationData(forAreas areaIds: [Int], completion: @escaping (Result<[SeoulPopulationDTO.Data]?, Error>) -> Void)
+  func fetchCulturalEvents(_ request: CulturalEventDTO.Request, completion: @escaping (Result<[CulturalEvent], Error>) -> Void)
 }
 
 final class SeoulPublicAPIClient {
@@ -88,5 +89,37 @@ extension SeoulPublicAPIClient: SeoulPublicAPIClientType {
         completion(.success(list))
       }
     }
+  }
+  
+  func fetchCulturalEvents(_ request: CulturalEventDTO.Request, completion: @escaping (Result<[CulturalEvent], Error>) -> Void) {
+    let key = AppConfiguration.shared.seoulPublicDataAPIKey
+    let type = "json"
+    let service = "culturalEventInfo"
+    let startIndex = request.startIndex
+    let endIndex = request.endIndex
+    let codeName = request.codeName
+    let title = request.title
+    let date = request.date
+    
+    let urlString = "\(baseUrl)/\(key)/\(type)/\(service)/\(startIndex)/\(endIndex)/\(codeName)/\(title)/\(date)"
+      .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+    print(urlString)
+    
+    AF.request(urlString)
+      .responseDecodable(of: CulturalEventDTO.Response.self) { res in
+        switch res.result {
+        case .success(let res):
+          print(res)
+          if let events = res.culturalEventInfo?.row {
+            completion(.success(events))
+          } else {
+            completion(.success([]))
+          }
+        case .failure(let error):
+          completion(.failure(error))
+        }
+      }
+    
+    return
   }
 }

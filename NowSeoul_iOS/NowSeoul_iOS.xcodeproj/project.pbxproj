@@ -75,6 +75,10 @@
 		5B81D6952BC4C1C50024D90E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5B81D6942BC4C1C50024D90E /* RxCocoa */; };
 		5B81D6972BC4C1C50024D90E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B81D6962BC4C1C50024D90E /* RxSwift */; };
 		5B81D6992BC4C8E40024D90E /* UITabBarController+style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81D6982BC4C8E40024D90E /* UITabBarController+style.swift */; };
+		5B81D6A12BC4DC620024D90E /* BaseViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81D6A02BC4DC620024D90E /* BaseViewModelType.swift */; };
+		5B81D6A32BC4DCCA0024D90E /* CulturalEventCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81D6A22BC4DCCA0024D90E /* CulturalEventCalendarViewModel.swift */; };
+		5B81D6A72BC4E3CB0024D90E /* RxBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81D6A62BC4E3CB0024D90E /* RxBaseViewController.swift */; };
+		5B81D6AB2BC4E5C50024D90E /* CulturalEventCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81D6AA2BC4E5C50024D90E /* CulturalEventCalendarView.swift */; };
 		5B8A2C142BAC132A000F8666 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A2C132BAC132A000F8666 /* BaseCollectionViewCell.swift */; };
 		5B8A2C162BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A2C152BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift */; };
 		5BBCBC5F2BC4149E004D68A5 /* AreaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCBC532BC4149D004D68A5 /* AreaDetailViewController.swift */; };
@@ -159,6 +163,10 @@
 		5B7E25B12B9A122B001CA577 /* SeoulPopulationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulPopulationDTO.swift; sourceTree = "<group>"; };
 		5B7E25B42B9A14E5001CA577 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		5B81D6982BC4C8E40024D90E /* UITabBarController+style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+style.swift"; sourceTree = "<group>"; };
+		5B81D6A02BC4DC620024D90E /* BaseViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelType.swift; sourceTree = "<group>"; };
+		5B81D6A22BC4DCCA0024D90E /* CulturalEventCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulturalEventCalendarViewModel.swift; sourceTree = "<group>"; };
+		5B81D6A62BC4E3CB0024D90E /* RxBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBaseViewController.swift; sourceTree = "<group>"; };
+		5B81D6AA2BC4E5C50024D90E /* CulturalEventCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulturalEventCalendarView.swift; sourceTree = "<group>"; };
 		5B8A2C132BAC132A000F8666 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		5B8A2C152BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulHotspotAreaDataManager.swift; sourceTree = "<group>"; };
 		5BBCBC532BC4149D004D68A5 /* AreaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaDetailViewController.swift; sourceTree = "<group>"; };
@@ -261,7 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4DC13C2BA974BC002A9D6F /* Observable.swift */,
-				5B4DC16C2BA9AF13002A9D6F /* UIView+addSubviews.swift */,
+				5B81D6A02BC4DC620024D90E /* BaseViewModelType.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -439,6 +447,7 @@
 		5B5248CD2BAAC7FF002048A9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5B4DC16C2BA9AF13002A9D6F /* UIView+addSubviews.swift */,
 				5B4DC1702BA9B3EB002A9D6F /* UIViewController+hideKeyboard.swift */,
 				5BBCBC662BC41640004D68A5 /* UIViewController+Navigation.swift */,
 				5B81D6982BC4C8E40024D90E /* UITabBarController+style.swift */,
@@ -497,6 +506,7 @@
 				5B6886F32B9C5B5500B75DE5 /* BaseViewController.swift */,
 				5B6886FD2B9C5CEA00B75DE5 /* BaseView.swift */,
 				5B8A2C132BAC132A000F8666 /* BaseCollectionViewCell.swift */,
+				5B81D6A62BC4E3CB0024D90E /* RxBaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -515,8 +525,8 @@
 		5B6886FF2B9C5E5B00B75DE5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				5BBCBC6B2BC41A43004D68A5 /* CulturalEventScene */,
 				5B4DC14F2BA99C26002A9D6F /* Style */,
+				5BBCBC6B2BC41A43004D68A5 /* CulturalEventScene */,
 				5B6886F22B9C5B4D00B75DE5 /* Base */,
 				5B6659A82BAF32EA006C93B4 /* PopultionScene */,
 				5B4907882BAA916500A654C0 /* SettingScene */,
@@ -656,8 +666,9 @@
 		5BBCBC6C2BC41A51004D68A5 /* CulturalEventCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				5BBCBC722BC41AEB004D68A5 /* View */,
 				5BBCBC6D2BC41A8C004D68A5 /* CulturalEventCalendarViewController.swift */,
+				5B81D6A22BC4DCCA0024D90E /* CulturalEventCalendarViewModel.swift */,
+				5BBCBC722BC41AEB004D68A5 /* View */,
 			);
 			path = CulturalEventCalendar;
 			sourceTree = "<group>";
@@ -665,6 +676,7 @@
 		5BBCBC722BC41AEB004D68A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B81D6AA2BC4E5C50024D90E /* CulturalEventCalendarView.swift */,
 				5BBCBC732BC41AF7004D68A5 /* Cell */,
 			);
 			path = View;
@@ -889,12 +901,15 @@
 				5B4026462BAFFDFA007352AF /* CarouselFlowLayout.swift in Sources */,
 				5BBCBC642BC4149E004D68A5 /* PopulationView.swift in Sources */,
 				5B4DC1392BA9735A002A9D6F /* HomeViewModel.swift in Sources */,
+				5B81D6A12BC4DC620024D90E /* BaseViewModelType.swift in Sources */,
 				5BBCBC752BC41B09004D68A5 /* CulturalEventListCell.swift in Sources */,
 				5B7E25AF2B9A0BAD001CA577 /* SeoulPublicAPIClient.swift in Sources */,
+				5B81D6A72BC4E3CB0024D90E /* RxBaseViewController.swift in Sources */,
 				5B8A2C162BAC1CF9000F8666 /* SeoulHotspotAreaDataManager.swift in Sources */,
 				5B4DC1642BA99D5A002A9D6F /* FontAsset+Constants.swift in Sources */,
 				5BBCBC602BC4149E004D68A5 /* CongestionBarChartCell.swift in Sources */,
 				5B5B924E2BAD6EB500FF157D /* Feature.swift in Sources */,
+				5B81D6A32BC4DCCA0024D90E /* CulturalEventCalendarViewModel.swift in Sources */,
 				5B5137622BADA0B800471392 /* HotspotArea+Style.swift in Sources */,
 				5BBCBC792BC41BAB004D68A5 /* CulturalEventDTO.swift in Sources */,
 				5B7E25B52B9A14E5001CA577 /* String+Extension.swift in Sources */,
@@ -909,6 +924,7 @@
 				5B4DC15C2BA99C84002A9D6F /* UIFont+FontAsset.swift in Sources */,
 				5BBCBC5F2BC4149E004D68A5 /* AreaDetailViewController.swift in Sources */,
 				5B4DC1562BA99C6E002A9D6F /* ColorAsset.swift in Sources */,
+				5B81D6AB2BC4E5C50024D90E /* CulturalEventCalendarView.swift in Sources */,
 				5B4DC1582BA99C77002A9D6F /* UIColor+ColorAsset.swift in Sources */,
 				5B4DC1762BA9EA5B002A9D6F /* HotSpotView.swift in Sources */,
 				5B6887052B9C5EA700B75DE5 /* MapView.swift in Sources */,

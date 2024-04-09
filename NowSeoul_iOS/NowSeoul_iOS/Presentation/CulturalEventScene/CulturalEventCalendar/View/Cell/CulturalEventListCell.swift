@@ -11,6 +11,7 @@ import Then
 import Kingfisher
 
 final class CulturalEventListCell: BaseCollectionViewCell {
+  
   private let eventImageView = UIImageView().then {
     $0.contentMode = .scaleAspectFill
     $0.layer.cornerRadius = 12

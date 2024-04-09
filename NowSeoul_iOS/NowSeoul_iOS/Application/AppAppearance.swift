@@ -39,5 +39,15 @@ enum AppAppearance {
     tabBarAppearance.isTranslucent = false
     tabBarAppearance.standardAppearance = appearance
     tabBarAppearance.scrollEdgeAppearance = appearance
+    tabBarAppearance.layer.cornerRadius = 30
+    tabBarAppearance.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
   }
 }
+
+#if(DEBUG)
+import UIKit
+@available(iOS 17.0, *)
+#Preview {
+  return MainTabBarController()
+}
+#endif

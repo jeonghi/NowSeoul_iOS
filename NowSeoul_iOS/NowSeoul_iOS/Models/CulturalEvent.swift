@@ -54,6 +54,30 @@ struct CulturalEvent: Decodable, Hashable, Identifiable {
     case detailUrl = "HMPG_ADDR"
   }
   
+  init(id: String, category: Category, district: District, eventName: String, dateTime: String, location: String, organizationName: String, targetAudience: String, usageFee: String, performerInfo: String? = nil, introduction: String? = nil, imageUrl: URL? = nil, applicationDate: String, type: String, startDate: String, endDate: String, theme: String, latitude: Double? = nil, longitude: Double? = nil, isFree: Bool, detailUrl: URL? = nil) {
+    self.id = id
+    self.category = category
+    self.district = district
+    self.eventName = eventName
+    self.dateTime = dateTime
+    self.location = location
+    self.organizationName = organizationName
+    self.targetAudience = targetAudience
+    self.usageFee = usageFee
+    self.performerInfo = performerInfo
+    self.introduction = introduction
+    self.imageUrl = imageUrl
+    self.applicationDate = applicationDate
+    self.type = type
+    self.startDate = startDate
+    self.endDate = endDate
+    self.theme = theme
+    self.latitude = latitude
+    self.longitude = longitude
+    self.isFree = isFree
+    self.detailUrl = detailUrl
+  }
+  
   init(from decoder: any Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     self.category = try container.decode(CulturalEvent.Category.self, forKey: .category)

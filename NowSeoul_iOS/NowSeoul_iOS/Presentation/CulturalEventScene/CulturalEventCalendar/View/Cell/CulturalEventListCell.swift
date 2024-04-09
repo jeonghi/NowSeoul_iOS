@@ -134,5 +134,25 @@ final class CulturalEventListCell: BaseCollectionViewCell {
 
 @available(iOS 17.0, *)
 #Preview {
-  CulturalEventListCell()
+  let dummyData = CulturalEvent.init(
+    id: UUID().uuidString,
+    category: .classic,
+    district: .dongdaemun,
+    eventName: "[서울시립과학관] 2024 토요과학강연",
+    dateTime: "2024-03-30~2024-11-09",
+    location: "서울시립과학관 1층 사이언스홀",
+    organizationName: "서울시립과학관",
+    targetAudience: "과학에 관심있는 누구나",
+    usageFee: "",
+    applicationDate: "2024-03-06",
+    type: "기관",
+    startDate: "2024-03-30 00:00:00.0",
+    endDate: "2024-11-09 00:00:00.0",
+    theme: "기타",
+    isFree: true
+  )
+  
+  let cell = CulturalEventListCell(frame: .zero)
+  cell.configure(with: dummyData)
+  return cell
 }

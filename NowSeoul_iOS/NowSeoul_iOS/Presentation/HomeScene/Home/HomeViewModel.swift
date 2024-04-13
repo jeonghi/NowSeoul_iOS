@@ -20,13 +20,9 @@ final class HomeViewModel {
 
 extension HomeViewModel: BaseViewModel {
   struct Input {
-    let viewWillAppear: Observable<Void?> = .init(nil)
-    let viewDidLoad: Observable<Void?> = .init(nil)
-    let cellTapped: Observable<Int?> = .init(nil)
   }
   
   struct Output {
-    let isLoading: Observable<Bool> = .init(false)
   }
   
   func transform() {

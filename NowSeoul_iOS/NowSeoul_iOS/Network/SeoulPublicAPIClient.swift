@@ -103,13 +103,11 @@ extension SeoulPublicAPIClient: SeoulPublicAPIClientType {
     
     let urlString = "\(baseUrl)/\(key)/\(type)/\(service)/\(startIndex)/\(endIndex)/\(codeName)/\(title)/\(date)"
       .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-    print(urlString)
     
     AF.request(urlString)
       .responseDecodable(of: CulturalEventDTO.Response.self) { res in
         switch res.result {
         case .success(let res):
-          print(res)
           if let events = res.culturalEventInfo?.row {
             completion(.success(events))
           } else {

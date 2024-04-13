@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import FSCalendar
+import RxSwift
 
 final class CulturalEventCalendarView: BaseView {
   enum Section {
@@ -16,7 +17,7 @@ final class CulturalEventCalendarView: BaseView {
   
   var delegate: CulturalEventCalendarViewDelegate?
   
-  private lazy var calendarView = FSCalendar(frame: .zero).then {
+  lazy var calendarView = FSCalendar(frame: .zero).then {
     $0.delegate = self
     $0.dataSource = self
     $0.select(Date())
@@ -32,8 +33,6 @@ final class CulturalEventCalendarView: BaseView {
     $0.register(CulturalEventListCell.self, forCellWithReuseIdentifier: CulturalEventListCell.identifier)
     $0.delegate = self
   }
-  
-  var selectedDate: Date? { calendarView.selectedDate }
   
   private lazy var dataSource: UICollectionViewDiffableDataSource<Section, CulturalEvent> = configureDataSource()
   

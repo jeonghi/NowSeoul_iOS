@@ -18,7 +18,6 @@
 		5B4DC1352BA9734B002A9D6F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1342BA9734B002A9D6F /* HomeViewController.swift */; };
 		5B4DC1372BA97352002A9D6F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1362BA97352002A9D6F /* HomeView.swift */; };
 		5B4DC1392BA9735A002A9D6F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1382BA9735A002A9D6F /* HomeViewModel.swift */; };
-		5B4DC13D2BA974BC002A9D6F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC13C2BA974BC002A9D6F /* Observable.swift */; };
 		5B4DC1422BA97517002A9D6F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1412BA97517002A9D6F /* MainTabBarController.swift */; };
 		5B4DC1442BA97651002A9D6F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1432BA97651002A9D6F /* BaseViewModel.swift */; };
 		5B4DC1462BA97764002A9D6F /* BaseViewModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4DC1452BA97764002A9D6F /* BaseViewModelConfigurable.swift */; };
@@ -64,6 +63,8 @@
 		5B6886FE2B9C5CEA00B75DE5 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6886FD2B9C5CEA00B75DE5 /* BaseView.swift */; };
 		5B6887012B9C5E6C00B75DE5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6887002B9C5E6C00B75DE5 /* MapViewController.swift */; };
 		5B6887052B9C5EA700B75DE5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6887042B9C5EA700B75DE5 /* MapView.swift */; };
+		5B7436822BCA51ED00B227E1 /* CulturalEventCalendarView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7436812BCA51ED00B227E1 /* CulturalEventCalendarView+Rx.swift */; };
+		5B7436842BCA71C700B227E1 /* SeoulPublicAPIClient+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7436832BCA71C700B227E1 /* SeoulPublicAPIClient+Rx.swift */; };
 		5B77E8D02BB010030084DCE9 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B77E8CF2BB010030084DCE9 /* Int+Extension.swift */; };
 		5B7A81502BB0816900DA092E /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7A814F2BB0816900DA092E /* SectionHeaderView.swift */; };
 		5B7A81522BB0834200DA092E /* PosterStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7A81512BB0834200DA092E /* PosterStyleCell.swift */; };
@@ -115,7 +116,6 @@
 		5B4DC1342BA9734B002A9D6F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5B4DC1362BA97352002A9D6F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5B4DC1382BA9735A002A9D6F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		5B4DC13C2BA974BC002A9D6F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		5B4DC1412BA97517002A9D6F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		5B4DC1432BA97651002A9D6F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		5B4DC1452BA97764002A9D6F /* BaseViewModelConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelConfigurable.swift; sourceTree = "<group>"; };
@@ -152,6 +152,8 @@
 		5B6886FD2B9C5CEA00B75DE5 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		5B6887002B9C5E6C00B75DE5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5B6887042B9C5EA700B75DE5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		5B7436812BCA51ED00B227E1 /* CulturalEventCalendarView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CulturalEventCalendarView+Rx.swift"; sourceTree = "<group>"; };
+		5B7436832BCA71C700B227E1 /* SeoulPublicAPIClient+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SeoulPublicAPIClient+Rx.swift"; sourceTree = "<group>"; };
 		5B77E8CF2BB010030084DCE9 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		5B7A814F2BB0816900DA092E /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		5B7A81512BB0834200DA092E /* PosterStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterStyleCell.swift; sourceTree = "<group>"; };
@@ -268,7 +270,6 @@
 		5B4DC13B2BA974B6002A9D6F /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				5B4DC13C2BA974BC002A9D6F /* Observable.swift */,
 				5B81D6A02BC4DC620024D90E /* BaseViewModelType.swift */,
 			);
 			path = Protocol;
@@ -476,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				5B7E25AE2B9A0BAD001CA577 /* SeoulPublicAPIClient.swift */,
+				5B7436832BCA71C700B227E1 /* SeoulPublicAPIClient+Rx.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -677,6 +679,7 @@
 			isa = PBXGroup;
 			children = (
 				5B81D6AA2BC4E5C50024D90E /* CulturalEventCalendarView.swift */,
+				5B7436812BCA51ED00B227E1 /* CulturalEventCalendarView+Rx.swift */,
 				5BBCBC732BC41AF7004D68A5 /* Cell */,
 			);
 			path = View;
@@ -918,6 +921,7 @@
 				5B49078B2BAA917F00A654C0 /* SettingViewController.swift in Sources */,
 				5BCE6BEF2B9984F700FFE73E /* ViewController.swift in Sources */,
 				5B6886F42B9C5B5500B75DE5 /* BaseViewController.swift in Sources */,
+				5B7436822BCA51ED00B227E1 /* CulturalEventCalendarView+Rx.swift in Sources */,
 				5B4DC15A2BA99C7C002A9D6F /* FontAsset.swift in Sources */,
 				5B81D6992BC4C8E40024D90E /* UITabBarController+style.swift in Sources */,
 				5B7A81522BB0834200DA092E /* PosterStyleCell.swift in Sources */,
@@ -957,11 +961,11 @@
 				5B6886FE2B9C5CEA00B75DE5 /* BaseView.swift in Sources */,
 				5B8A2C142BAC132A000F8666 /* BaseCollectionViewCell.swift in Sources */,
 				5B4DC15E2BA99C8B002A9D6F /* ImageAsset.swift in Sources */,
+				5B7436842BCA71C700B227E1 /* SeoulPublicAPIClient+Rx.swift in Sources */,
 				5B4F79CD2BAD24E200645AFA /* CongestionLevel.swift in Sources */,
 				5BBCBC672BC41640004D68A5 /* UIViewController+Navigation.swift in Sources */,
 				5B4DC1662BA99D65002A9D6F /* ImageAsset+Constants.swift in Sources */,
 				5B6887012B9C5E6C00B75DE5 /* MapViewController.swift in Sources */,
-				5B4DC13D2BA974BC002A9D6F /* Observable.swift in Sources */,
 				5BC8F0F22BAB1DFC0013C605 /* NSObject+id.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1134,7 +1138,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jeonghi.NowSeoul-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1170,7 +1174,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jeonghi.NowSeoul-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

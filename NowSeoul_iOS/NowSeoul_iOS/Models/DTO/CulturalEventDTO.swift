@@ -24,8 +24,8 @@ enum CulturalEventDTO {
     }
     
     init(
-      startIndex: Int,
-      endIndex: Int,
+      startIndex: Int = 0,
+      endIndex: Int = 999,
       codeName: CulturalEvent.Category? = nil,
       title: String? = nil,
       date: Date? = nil

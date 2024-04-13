@@ -8,16 +8,13 @@
 import UIKit
 import SnapKit
 import Then
-import FSCalendar
 import RxSwift
+import RxCocoa
 
 final class CulturalEventCalendarViewController: RxBaseViewController {
+  private lazy var mainView = CulturalEventCalendarView(frame: .zero)
   
-  private let apiClient = SeoulPublicAPIClient.shared
-  
-  private lazy var mainView = CulturalEventCalendarView(frame: .zero).then {
-    $0.delegate = self
-  }
+  private let viewModel: CulturalEventCalendarViewModel = .init()
   
   override func loadView() {
     view = mainView
@@ -25,29 +22,24 @@ final class CulturalEventCalendarViewController: RxBaseViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    if let selectedDate = mainView.selectedDate {
-      loadEventsForSelectedDate(selectedDate)
-    }
-    
     self.navigationItem.title = "문화행사"
   }
   
-  func loadEventsForSelectedDate(_ date: Date) {
-    // 날짜 기반으로 이벤트 로드 (API 호출)
+  override func bind() {
+    super.bind()
     
-    apiClient.fetchCulturalEvents(.init(startIndex: 0, endIndex: 999, date: date)) { [weak self] result in
-      DispatchQueue.main.async {
-        switch result {
-        case .success(let datas):
-          self?.mainView.updateEvent(for: datas)
-        case .failure(let error):
-          self?.showRetryAlert(message: error.localizedDescription) {
-            self?.loadEventsForSelectedDate(date)
-          }
-        }
-      }
-    }
+    let selectedDate = mainView.rx.selectedDate
+    
+    // MARK: Input
+    let input = CulturalEventCalendarViewModel.Input(
+      selectedDate: selectedDate
+    )
+    
+    // MARK: Output
+    let output = viewModel.transform(input)
+    output.events
+      .drive { self.mainView.updateEvent(for: $0) }
+      .disposed(by: disposeBag)
   }
   
   private func showRetryAlert(message: String, retryAction: @escaping () -> Void) {
@@ -59,13 +51,6 @@ final class CulturalEventCalendarViewController: RxBaseViewController {
     present(alert, animated: true, completion: nil)
   }
 }
-
-extension CulturalEventCalendarViewController: CulturalEventCalendarViewDelegate {
-  func culturalEventCalendarView(_ culturalEventCalendarView: CulturalEventCalendarView, didSelect date: Date) {
-    loadEventsForSelectedDate(date)
-  }
-}
-
 
 @available(iOS 17.0, *)
 #Preview {

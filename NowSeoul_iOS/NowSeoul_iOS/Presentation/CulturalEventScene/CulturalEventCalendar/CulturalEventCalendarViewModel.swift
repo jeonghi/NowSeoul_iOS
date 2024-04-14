@@ -20,6 +20,7 @@ final class CulturalEventCalendarViewModel: BaseViewModelType {
   
   struct Output {
     let events: Driver<[CulturalEvent]>
+    let isLoading: BehaviorRelay<Bool>
   }
   
   func transform(_ input: Input) -> Output {
@@ -27,12 +28,14 @@ final class CulturalEventCalendarViewModel: BaseViewModelType {
     
     let errorSubject = PublishSubject<Error>()
     let eventsSubject = PublishSubject<[CulturalEvent]>()
+    let isLoading = BehaviorRelay(value: false)
     
     selectedDate
       .compactMap { $0 }
       .distinctUntilChanged()
       .flatMapLatest { [unowned self] date -> Single<Result<[CulturalEvent], Error>> in
         let request = CulturalEventDTO.Request(date: date)
+        isLoading.accept(true)
         return self.apiClient.fetchCulturalEventsRx(request)
       }
       .subscribe(onNext: { result in
@@ -42,12 +45,16 @@ final class CulturalEventCalendarViewModel: BaseViewModelType {
         case .failure(let error):
           errorSubject.onNext(error)
         }
+        isLoading.accept(false)
       })
       .disposed(by: disposeBag)
     
     let eventsDriver = eventsSubject
       .asDriver(onErrorJustReturn: [])
     
-    return Output(events: eventsDriver)
+    return Output(
+      events: eventsDriver,
+      isLoading: isLoading
+    )
   }
 }

@@ -40,6 +40,15 @@ final class CulturalEventCalendarViewController: RxBaseViewController {
     output.events
       .drive { self.mainView.updateEvent(for: $0) }
       .disposed(by: disposeBag)
+    output.isLoading
+      .bind(with: self) { owner, isLoading in
+        if(isLoading) {
+          owner.activityIndicator.startAnimating()
+        } else {
+          owner.activityIndicator.stopAnimating()
+        }
+      }
+      .disposed(by: disposeBag)
   }
   
   private func showRetryAlert(message: String, retryAction: @escaping () -> Void) {
